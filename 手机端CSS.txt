@@ -1,0 +1,65 @@
+ function isLeapYear (Year) {//判断闰年
+      if (((Year % 4)==0) && ((Year % 100)!=0) || ((Year % 400)==0)) {
+         return (false);
+      } else { return (true); }
+    }
+$('span[style="color:#ff0000"]')
+var deviceWidth = Math.min(640, document.documentElement.clientWidth);//计算remHTMl字体大小
+document.documentElement.style.fontSize = deviceWidth / 6.4 + "px";
+方法二
+(function(){
+var baseFontSize = 100;
+var baseWidth = 320;
+var rem = 100;
+var deviceWidth = document.documentElement.clientWidth;
+if( deviceWidth > 640 ) deviceWidth = 640;
+document.documentElement.style.fontSize = deviceWidth / 6.4 + "px";
+}())
+<meta name="renderer" content="webkit"> //浏览器以极速模式打开
+-webkit-overflow-scrolling: touch; //网页在Safari快速滚动和回弹
+transform-origin:right top;//按照某一位置旋转
+tap-highlight-color: rgba(0,0,0,0);//处理手机上 图片链接 点击右蓝色的背景框
+focus-ring-color: rgba(0, 0, 0, 0);
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+-webkit-focus-ring-color: rgba(0, 0, 0, 0);
+-moz-tap-highlight-color: rgba(0,0,0,0);
+-moz-focus-ring-color: rgba(0, 0, 0, 0);
+比例值计算 老高度 乘以 新宽度 除以 老宽度
+乘以3 除以4 4:3
+requestAnimationFrame()
+181
+196
+display: -webkit-flex-box;
+-webkit-flex-box: 1;
+rem 屏幕宽度/20
+will-change  css3 动画加速
+text-align: justify; 文字边缘对齐
+text-overflow: ellipsis;//超过一行增加省略号
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+textarea//增加边距
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+text-align: justify;
+-webkit-appearance: none; 苹果submit 圆角BUG 
+<base href="http://m.uehtml.com/template_m/templates/">//所有链接规定默认地址
+
+transform: translateY(0%);向下倾斜
+transform: rotate(180deg);旋转
+transform:translateX(0%) rotate(180deg);
+background: rgba(0,0,0,0); 透明可点击的颜色
+-webkit-transform: translate(0,-50%);//倾斜
+-ms-transform: translate(0,-50%);
+-moz-transform: translate(0,-50%);
+transform: translate(0,-50%);
+
+-webkit-font-smoothing: antialiased;//反锯齿
+word-break: break-all; 连续英语换行
+
+box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
