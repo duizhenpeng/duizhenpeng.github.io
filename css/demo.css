@@ -1,0 +1,159 @@
+.ac-top-box {
+    width: 1190px;
+    margin: 20px auto 0  auto;
+}
+.ac-top-left {
+    float: left;
+    width: 185px;
+    position: relative;
+    z-index: 9;
+}
+.ac-top-tit{
+    width: 185px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+    font-size: 16px;
+    background: #65c178;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+.ac-top-left:hover .ac-top-tit  b{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.ac-top-tit b {
+    background: url(../images/images/menu-arrows.png) no-repeat;
+    display: block;
+    width: 15px;
+    height: 7px;
+    position: absolute;
+    left: 144px;
+    top: 17px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all .3s cubic-bezier(0.86,0,0.07,1);
+    -moz-transition: all .3s cubic-bezier(0.86,0,0.07,1);
+    transition: all .3s cubic-bezier(0.86,0,0.07,1);
+}
+.ac-top-left:hover .menu-left {
+    display: block;
+}
+.ac-top-right {
+    float: left;
+    margin-left: 10px;
+}
+.input-time {
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    position: relative;
+}
+
+.input-time-boot {
+    text-indent: 5px;
+    height: 20px;
+    width: 137px;
+    line-height: 20px;
+    color: #999999;
+    background: url(../images/images/time.jpg) 115px 3px no-repeat;
+    border: 1px solid #ccc;
+}
+.choice-list span {
+    width: 33px;
+    display: inline-block;
+    text-align: center;
+    float: left;
+    line-height: 24px;
+}
+.menu-left {
+    float: left;
+    width: 177px;
+    border: 4px solid #65c178;
+    border-top: none;
+    display: none;
+    position: absolute;
+    background: #fff;
+    overflow:hidden;
+    height: 0;
+    -webkit-transition: height .3s cubic-bezier(0.86,0,0.07,1);
+    -moz-transition: height .3s cubic-bezier(0.86,0,0.07,1);
+    transition: height .3s cubic-bezier(0.86,0,0.07,1);
+}
+.menu-left ul li a {
+    display: block;
+    height: 29px;
+    line-height: 29px;
+    text-indent: 20px;
+    font-size: 14px;
+    margin: 10px 0;
+}
+.menu-left ul li a:hover {
+    background: #535353;
+    color: #fff;
+    text-decoration: none;
+    text-indent: 30px;
+}
+
+.menu-center-title ul li {
+    float: left;
+}
+.menu-center-title ul li a {
+    font-size: 16px;
+    display: block;
+    width: 80px;
+    line-height: 36px;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+}
+.menu-center-title ul li a:hover {
+    text-decoration: none;
+}
+.menu-center-title ul li a b {
+    display: block;
+    background: url(../images/images/arrows-bottom.png) no-repeat;
+    width: 9px;
+    height: 5px;
+    position: absolute;
+    left: 63px;
+    top: 17px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all .3s cubic-bezier(0.86,0,0.07,1);
+    -moz-transition: all .3s cubic-bezier(0.86,0,0.07,1);
+    transition: all .3s cubic-bezier(0.86,0,0.07,1);
+}
+.menu-center-title ul li a:hover b{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.ac-top-comment  {
+    width: 185px;
+    float: right;
+    margin-top: 7px;
+}
+.ac-top-comment a {
+    display: block;
+    padding: 2px 5px;
+    background: #65c178;
+    float: left;
+    color: #fff;
+}
+.ac-top-comment a.remark {
+    background: #ff9c0e;
+    margin-right: 10px;
+}
