@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <title>第三方登录</title>
+  <script type="text/javascript" src="js/jquery1.8.3.js"></script>
+  <script type="text/javascript">
+  $(function(){
+ //        $(".input-num input").each(function(i){
+ //        $(this).blur(function(){
+ //            var oThis = $(".input-num input").eq(i);
+ //            if(oThis.val()!=""){
+ //                if(oThis.siblings(".input-tip").attr("class")!="input-tip input-tip-yes"){
+ //                    $(this).siblings(".input-tip").animate({
+ //                        right: 0
+ //                     },100,function(){
+ //                         oThis.siblings(".input-tip").addClass("input-tip-yes");
+ //                        oThis.siblings(".input-tip").animate({
+ //                            right: -275
+ //                         },200)
+ //                     })
+ //                }
+ //             }else {
+ //                if(oThis.siblings(".input-tip").attr("class")=="input-tip input-tip-yes"){
+ //                    oThis.siblings(".input-tip").removeClass("input-tip-yes");
+ //                    oThis.siblings(".input-tip").animate({
+ //                        right: 0
+ //                     },200)
+ //                     $(this).siblings(".input-tip").animate({
+ //                        right: -275
+ //                     },200)
+ //                 }else{
+ //                     $(this).siblings(".input-tip").animate({
+ //                        right: -275
+ //                     },200)
+ //                 }
+ //             }
+ //         })
+ //       })
+ var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;//邮箱验证
+    var oVia = false;
+    $(".sub").click(function(){
+      Vali();
+    })
+    function Vali(){
+       if(reg.test($(".email input").val())){//邮箱验证
+           oVia=true;
+        Validation(oVia,$(".email input"));
+      }else{
+        oVia=false;
+        Validation(oVia,$(".email input"));
+      }
+      if($(".input-password input").val()!=""){//密码验证
+         oVia=true;
+        Validation(oVia,$(".input-password input"));
+      }else{
+         oVia=false;
+        Validation(oVia,$(".input-password input"));
+      }
+    }
+    $(".input-password input").blur(function(){//密码不为空
+      if($(this).val()!=""){
+        oVia=true;
+        Validation(oVia,$(this));
+      }else{
+        oVia=false;
+        Validation(oVia,$(this));
+       }
+    })
+    $(".email input").blur(function(){//邮箱验证
+       if(reg.test($(this).val())){
+        oVia=true;
+        Validation(oVia,$(this));
+       }else{
+        oVia=false;
+        Validation(oVia,$(this));
+       }
+    })
+      function Validation(condition,obj){
+          if(condition){//表单正确
+               var oThis = obj;
+           if(oThis.siblings(".input-tip").attr("class")!="input-tip input-tip-yes"){
+                   oThis.siblings(".input-tip").animate({
+                        right: 0
+                     },100,function(){
+                         oThis.siblings(".input-tip").addClass("input-tip-yes");
+                        oThis.siblings(".input-tip").animate({
+                            right: -275
+                         },200)
+                     })
+                }
+          }else{//表单错误
+                 var oThis = obj;
+                 if(oThis.siblings(".input-tip").attr("class")=="input-tip input-tip-yes"){
+                    oThis.siblings(".input-tip").removeClass("input-tip-yes");
+                    oThis.siblings(".input-tip").animate({
+                        right: 0
+                     },200)
+                     oThis.siblings(".input-tip").animate({
+                        right: -275
+                     },200)
+                 }else{
+                     oThis.siblings(".input-tip").animate({
+                        right: -275
+                     },200)
+                 }
+          }
+      }
+ })
+
+  </script>
+  <style type="text/css">
+   *{ padding: 0;margin: 0; font-size: 12px;  font-family: "Microsoft YaHei","微软雅黑","Helvetica Neue","Helvetica","Arial","sans-serif";color: #575757; }
+    ul li{ list-style:none; }
+    img { border: none; }
+    body { background: #f0f3f6; }
+    a {
+        color: #444;
+        text-decoration: none;
+        -webkit-transition: text-decoration .4s,color .4s,background .4s;
+        -moz-transition: text-decoration .4s,color .4s,background .4s;
+        transition:text-decoration .4s,color .4s,background .4s;
+    }
+    a:hover { color: #65c178;text-decoration: underline; }
+    .clear:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .thi-logo {
+      text-align: center;
+    }
+    .thi-cont {
+      width: 1190px;
+      margin: 60px auto 0 auto;
+    }
+    .thi-p {
+      margin-top: 17px;
+      font-size: 14px;
+      color: #8b96a1;
+    }
+    .thi-qq {
+      margin-top: 60px;
+    }
+    .thi-qq img {
+      border: 1px solid #d2d2d2;
+    }
+    .reg li {
+      height: 50px;
+      line-height: 37px;
+      margin: 0 0 10px 0;
+    }
+    .reg li p {
+        float: left;
+        width: 86px;
+        text-align: right;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+    }
+    .reg li input {
+        width: 316px;
+        line-height: 18px;
+        height: 18px;
+        padding: 15px 10px;
+        float: left;
+        border: 1px solid #d2d2d2;
+        outline:none;
+        z-index: 3;
+        left: 0;
+        top: 0;
+    }
+    .reg li.input-num input {
+       position: absolute;
+    }
+    .input-box .input-tip {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      height: 48px;
+      line-height: 48px;
+      background: #ffffe0;
+      border: 1px solid #d2d2d2;
+      border-left: none;
+      width: 240px;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .input-tip-min {
+      padding: 0 20px;
+    }
+    .input-box .input-tip b {
+      display: inline-block;
+      width: 16px;
+      height: 15px;
+      background: url(images/images/mistake.png) no-repeat;
+      float: left;
+      margin-top: 16px;
+    }
+    .input-box {
+      position: relative;
+      float: left;
+      text-indent: 5px;
+      width: 304px;
+      margin: 0;
+    }
+    .reg {
+      width: 338px;
+      margin: 20px auto 0 auto;
+    }
+    .sub {
+      width: 195px;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      background: #65c178;
+      color: #fff;
+      display: block;
+      margin: 90px auto 0 auto;
+    }
+    .sub:hover {
+      text-decoration: none;
+      color: #fff;
+    }
+    .input-box div.input-tip-yes b {
+      background: url(images/images/correct.png) no-repeat;
+    }
+    .input-tip-yes span {
+       display: none;
+    }
+    .input-box div.input-tip-yes {
+      background: none;
+      border: none;
+     }
+  </style>
+</head>
+<body>
+  <div class="thi-cont">
+    <div class="thi-logo"><a href=""><img src="images/images/three-logo.png" alt="" /></a>
+      <p class="thi-p">hi！Robber，完善以下你的信息，以后你也可以使用该邮箱和密码来登录《录趣》了。</p>
+      <p class="thi-qq"><img src="images/images/three-qq.png" alt="" /></p>
+      <div class="reg-box">
+        <ul class="reg">
+          <li class="input-text input-num"><div class="input-box"><input type="text" placeholder="此处默认QQ名称"><div class="input-tip"><div class="input-tip-min"><b></b><span>默认QQ绑定失败</span></div></div></div></li>
+          <li class="input-text input-num email"><div class="input-box"><input type="text" placeholder="登录邮箱" ><div class="input-tip"><div class="input-tip-min"><b></b><span>请输入正确的邮箱地址</span></div></div></div></li>
+          <li class="input-text input-num input-password"><div class="input-box"><input type="password" placeholder="登录密码"><div class="input-tip"><div class="input-tip-min"><b></b><span>密码不能为空</span></div></div></div></li>
+        </ul>
+        <a href="javascript:;" class="sub">提交信息</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
