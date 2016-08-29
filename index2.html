@@ -1,0 +1,2187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <title></title>
+  <style type="text/css">
+  *{ padding: 0;margin: 0; font-size: 12px;  font-family: "Microsoft YaHei","微软雅黑","arial";
+ color: #575757;}
+  ul li{ list-style:none; }
+  img { border: none; }
+  body { background: #f0f3f6; }
+  a {
+    color: #444;
+    text-decoration: none;
+    -webkit-transition: text-decoration,color .4s;
+-moz-transition: text-decoration,color .4s;
+transition: text-decoration,color .4s;
+  }
+  a:hover {
+    color: red;
+    text-decoration: underline;
+  }
+  .box {
+    width: 1190px;
+    margin: 0 auto;
+  }
+  #header-box {
+    width: 100%;
+    height: 37px;
+    background: #4f5f6f;
+  }
+  .header {
+    width: 1190px;
+    margin: 0 auto;
+    height: 37px;
+  }
+  .header-left {
+    float: left;
+  }
+  .header-left a {
+    display: block;
+    line-height: 37px;
+    text-align: center;
+    float: left;
+  }
+  .header-left a.landing {
+    width: 56px;
+    background: #3b444d;
+    color: #96aac0;
+  }
+  .header-left a.reg {
+    width: 90px;
+    background: #65c178;
+    color: #fff;
+  }
+  .header-right {
+    float: right;
+  }
+  .header-right .down-list li{
+    display: block;
+    width: 77px;
+    height: 37px;
+    float: left;
+    margin-left: 10px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .down-list li a{
+    display: block;
+    line-height: 37px;
+    color: #9aafc5;
+    text-align: center;
+  }
+  .down-list li a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  .down-list-d {
+    background: #56ab67;
+    color: #97efa9;
+    position: absolute;
+    width: 100%;
+    display: none;
+  }
+  .down-list li a{
+    color: #96aac0;
+  }
+  .down-list-d  a:hover{
+    background: #65c178;
+    color: #fff;
+  }
+  .header-right .down-list li a.list-color {
+    color: #fff;
+    position: relative;
+    z-index: 2;
+  }
+  .animat .down-list-d{
+      display: none;
+  }
+  .animat:hover .down-list-d {
+    display: block;
+  }
+  .animat .list-color b {
+
+    -webkit-transform: rotate(0deg);
+-moz-transform: rotate(0deg);
+-ms-transform: rotate(0deg);
+-o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  .animat:hover .list-color b {
+     -webkit-transform: rotate(180deg);
+-moz-transform: rotate(180deg);
+-ms-transform: rotate(180deg);
+-o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .animat:hover .list-color {
+    background: #65c178;
+    color: #fff;
+  }
+  a.list-color b{
+    display: block;
+    width: 8px;
+    height: 6px;
+    background: url(images/tri-top.png) no-repeat;
+    position: absolute;
+    right: 5px;
+    top: 16px;
+        -webkit-transform: rotate(0deg);
+-moz-transform: rotate(0deg);
+-ms-transform: rotate(0deg);
+-o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all .3s cubic-bezier(0.86,0,0.07,1);
+-moz-transition: all .3s cubic-bezier(0.86,0,0.07,1);
+transition: all .3s cubic-bezier(0.86,0,0.07,1);
+  }
+
+  .down-list li .down-list-d a {
+    color: #97efa9;
+ -webkit-transition: all .3s ;
+-moz-transition: all .3s ;
+transition: all .3s ;
+  }
+  .down-list li .down-list-d a:hover {
+    color: #fff;
+    background: #65c178;
+  }
+  .ad {
+    position: relative;
+    overflow: hidden;
+  }
+  .ad .exit {
+    display: block;
+    background: url(images/exit.gif) no-repeat;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .logo-box {
+    margin: 14px auto 0 auto;
+    width: 100%;
+  }
+  .logo-left {
+     float: left;
+  }
+  .logo-center {
+    float: left;
+    margin-left: 74px;
+  }
+  .logo-center ul li{
+    display: block;
+    float: left;
+    margin-right: 57px;
+    height: 48px;
+    line-height: 48px;
+  }
+  .logo-center ul li a {
+    font-size: 16px;
+  }
+  .clear:after {
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+  }
+  .logo-right {
+    float: right;
+  }
+  .logo-right .input-box input {
+    width: 245px;
+    height: 30px;
+    background: #fff;
+    border: 3px solid #65c178;
+    border-right: none;
+    text-indent: 18px;
+    float: left;
+    font-size: 14px;
+    outline:none;
+  -webkit-transform: rotate(0deg);
+-moz-transform: rotate(0deg);
+-ms-transform: rotate(0deg);
+-o-transform: rotate(0deg);
+transform: rotate(0deg);
+-webkit-transition: width .3s cubic-bezier(0.86,0,0.07,1);
+-moz-transition: width .3s cubic-bezier(0.86,0,0.07,1);
+transition: width .3s cubic-bezier(0.86,0,0.07,1);
+  }
+  .btn {
+    width: 44px;
+    height: 36px;
+    background: #65c178 url(images/search.png) 8px 4px no-repeat;
+    float: left;
+  }
+  .hot-search {
+    margin: 10px 0;
+  }
+  .hot-search span {
+    display: block;
+    float: left;
+  }
+  .hot-search a {
+    display: block;
+    float: left;
+    margin-right: 20px;
+  }
+  /*主体内容*/
+  .content {
+    width: 100%;
+  }
+  .cont-left {
+    float: left;
+    width: 106px;
+  }
+  .cont-tit {
+    height: 58px;
+    line-height: 50px;
+    color: #4f5f6f;
+    font-size: 18px;
+  }
+  .cont-left ul li {
+    width: 100%;
+    margin-top: 13px;
+  }
+  .cont-left ul li a {
+    font-size: 14px;
+    padding: 0 2px;
+     -webkit-transition: all .3s ;
+-moz-transition: all .3s ;
+transition: all .3s ;
+  }
+  .cont-left ul li a:hover {
+    color: #fff;
+    background: #65c178;
+    text-decoration: none;
+  }
+  .cont-center {
+    float: left;
+    width: 767px;
+  }
+  .cent-left {
+    float: left;
+  }
+  .cent-right {
+    float: right;
+    height: 58px;
+    line-height: 50px;
+  }
+  .cent-right p {
+    float: left;
+  }
+  .cent-right p b{
+    display: block;
+    margin: 17px 10px 0 30px;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    float: left;
+  }
+  .cent-right p span {
+    display: block;
+    float: left;
+  }
+  .speaking-list {
+    width: 100%;
+    overflow: hidden;
+  }
+  .speaking-list ul {
+    width: 795px;
+  }
+  .speaking-list ul li{
+    float: left;
+    width: 205px;
+    height: 121px;
+    padding: 14px 24px 0 24px;
+    background: #fff;
+    margin: 0 10px 10px 0;
+  }
+  .spea-top img {
+    width: 64px;
+    height: 64px;
+    border: 1px solid #d2d2d2;
+    float: left;
+  }
+  .spea-top-way {
+    height: 20px;
+    margin-top: 6px;
+  }
+  .spea-top-right {
+    float: left;
+    margin: 0 0 0 14px;
+    width: 125px;
+  }
+  .spea-top-tit p {
+    font-size: 14px;
+  }
+  .cont-right {
+    width: 290px;
+    float: right;
+  }
+  .classify a {
+    display: block;
+    float: left;
+    padding: 2px;
+    margin: 0 7px 13px 0;
+    -webkit-transition: all .3s ;
+    -moz-transition: all .3s ;
+    transition: all .3s ;
+  }
+  .classify a:hover {
+    color: #fff;
+    background: #65c178;
+    text-decoration: none;
+  }
+  .new-hot ul li {
+    height: 30px;
+    border-top: 1px solid #d2d8df;
+    line-height: 30px;
+  }
+  .new-hot  ul li b {
+    float: left;
+    font-weight: 500;
+  }
+  .new-hot ul li p {
+    float: left;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    width: 250px;
+  }
+  .new-hot ul li p span {
+    display: block;
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+  }
+  .new-hot ul li p strong {
+    font-weight: 500;
+    display: block;
+    height: 0;
+    width: 100%;
+  }
+  .new-hot  ul li img{
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin: 5px 4px 0 4px;
+  }
+  .pc {
+    background: url(images/pc.gif) no-repeat;
+  }
+  .phone {
+    background: url(images/phone.png) no-repeat;
+  }
+  .down {
+    background: url(images/down.png) no-repeat;
+  }
+  .top {
+    background: url(images/top.png) no-repeat;
+  }
+  .ems {
+    background: url(images/ems.png) no-repeat;
+    width: 17px;
+  }
+  .spea-top-way span {
+    float: left;
+  }
+  .spea-top-way b {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  .spea-grade {
+    margin: 8px 0;
+  }
+  .spea-grade-width {
+     width: 55px;
+     height: 11px;
+     float: left;
+     margin-right: 8px;
+     margin-top: 3px;
+     position: relative;
+  }
+  .spea-grade span {
+    float: left;
+    color: #ff4400;
+  }
+  .spea-grade-width b {
+    display: block;
+    width: 55px;
+    height: 11px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(images/star-white.png) repeat-x;
+    z-index: 1;
+  }
+  .spea-grade-width u {
+    display: block;
+    width: 30px;
+    height: 11px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: url(images/star-yellow.png) repeat-x;
+  }
+  .spea-top-right a:hover p,.spea-top-right a:hover span {
+    color: red;
+    text-decoration: underline;
+  }
+  /*Shine me*/
+  .shine-box {
+    width: 100%;
+    background: #e9eef3;
+    margin-top: 27px;
+  }
+  .shine {
+    width: 1190px;
+    margin: 0 auto;
+  }
+  .shine-left {
+    float: left;
+    width:  386px;
+    overflow: hidden;
+  }
+  .shine-left p {
+    line-height: 20px;
+  }
+  .shine-left p a {
+    color: #6f7f8e;
+  }
+  .shine-left p a:hover {
+    color: red;
+  }
+  .shine-left  p span {
+    color: #4f5f6f;
+    margin-left: 5px;
+  }
+  .shine-left ul li {
+    width: 180px;
+    height: 220px;
+    float: left;
+    margin: 0px 10px 10px 0;
+  }
+  .shine-left ul li img {
+    width: 180px;
+    height: 180px;
+  }
+  .shine-center {
+    float: left;
+    width: 471px;
+  }
+  .shine-cent-tit a p {
+    color: #4f5f6f;
+  }
+  .shine-cent-tit a span {
+    color: #7c858e;
+  }
+  .shine-cent-tit a:hover p {
+    color: red;
+    text-decoration: underline;
+  }
+  .shine-cent-tit a:hover span {
+    color: red;
+    text-decoration: underline;
+  }
+  .shine-cent-list ul li{
+    width: 100%;
+    display: block;
+    height: 20px;
+    margin-top: 17px;
+
+  }
+  .shine-cent-list ul li a {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    padding:0 5px;
+    float: left;
+    -webkit-transition: all .3s ;
+    -moz-transition: all .3s ;
+    transition: all .3s ;
+  }
+  .shine-cent-list ul li a:hover {
+    background: #65c178;
+    text-decoration: none;
+    color: #fff;
+  }
+  .shine-right {
+    float: right;
+  }
+  .shine-ad img {
+    width: 290px;
+    height: 110px;
+    margin-top: 34px;
+  }
+  .shine-left .cont-tit,.shine-center .cont-tit {
+    height: 64px;
+    line-height: 81px;
+  }
+  .shine-right-list li a {
+    margin-bottom: 8px;
+    display: block;
+  }
+  .shine-right-list  li p{
+    color: #9c9c9c;
+    margin-bottom: 8px;
+  }
+  /*热门下载*/
+  .down-cont {
+    width: 100%;
+    background: #f0f3f6;
+  }
+  .down-cont .content {
+    width: 1190px;
+    margin: 0 auto;
+  }
+  .down-cont-list  {
+    width: 100%;
+    overflow: hidden;
+  }
+  .down-cont-list ul {
+    width: 790px;
+  }
+  .down-cont-list ul li  {
+    width: 115px;
+    margin: 0 15px 15px 0;
+    float: left;
+  }
+  .down-cont-list ul li img {
+    width: 100%;
+    height: 150px;
+  }
+  .down-cont-list ul li p {
+    text-align: center;
+    margin-top: 3px;
+  }
+  .down-cont-list ul li p a {
+    display: inline-block;
+    width: 70px;
+    height: 22px;
+    line-height: 22px;
+    color: #fff;
+    background: #4f5f6f;
+    -webkit-transition: all .3s ;
+    -moz-transition: all .3s ;
+    transition: all .3s ;
+  }
+  .down-cont-list ul li p a:hover {
+    background: #65c178;
+    text-decoration: none;
+  }
+  .step-box {
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+  }
+  .step-box ul li {
+    padding: 15px 0 0 10px;
+    background: #fff;
+    float: left;
+    width: 255px;
+    height: 50px;
+    margin-right: 45px;
+    position: absolute;
+    top: 65px;
+  }
+  .step-box ul li img {
+    float: left;
+  }
+  .step-box ul li .step {
+    float: left;
+    margin-left: 18px;
+  }
+  .step-box ul li .step p {
+    font-weight: bold;
+    font-size: 14px;
+    color: #4f5f6f;
+    margin-bottom:  5px;
+  }
+  .arrows {
+    position: absolute;
+    right: -55px;
+    top: 0px;
+    width: 55px;
+    height: 32px;
+    background: url(images/arrows.png) no-repeat;
+  }
+  .step-1 {
+    z-index: 4;
+    left: 0px;
+  }
+  .step-2 {
+    left: 310px;
+    z-index: 3;
+  }
+  .step-3 {
+    left: 620px;
+    z-index: 2;
+  }
+  .step-4 {
+    left: 930px;
+    z-index: 1;
+  }
+  .step-box ul {
+    width: 1240px;
+    position: relative;
+    height: 65px;
+  }
+  .step span {
+    color: #95a3b1;
+  }
+  .footer-box {
+    width: 100%;
+    background: #ffffff;
+  }
+  .footer {
+    width: 1190px;
+    margin: 60px auto 0 auto;
+    padding: 40px 0 0 0 ;
+  }
+  .footer .footer-ul-li-tit {
+    font-size: 16px;
+    color: #585858;
+    margin-bottom: 22px;
+  }
+  .footer  .footer-left ul li {
+    margin-bottom: 4px;
+  }
+  .footer  .footer-left ul {
+    float: left;
+    width: 215px;
+  }
+  .footer  .footer-left ul li a {
+    color: #8a8a8a;
+  }
+  .footer .footer-left ul li a:hover {
+    color: red;
+  }
+  .footer-rigth {
+    float: right;
+    width: 145px;
+    text-align: center;
+  }
+  .footer-left  {
+    float: left;
+  }
+  .footer-rigth img {
+    width: 100%;
+    margin: 15px 0 10px 0;
+  }
+  .footer-bottom-box {
+    width: 100%;
+    height: 150px;
+    background: #f0f3f6;
+  }
+  .footer-bottom {
+    width: 1190px;
+    margin: 30px auto 0 auto;
+    padding-top: 39px;
+  }
+  .footer-bottom  p {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .footer-bottom p a {
+    margin: 0 0 0 5px;
+  }
+  .footer-bottom p.share {
+    margin-top: 13px;
+  }
+  .footer-bottom p.share span {
+    color: #444;
+  }
+  .footer-bottom span,.footer-bottom a,.footer-bottom p {
+    color: #d0d2d5;
+  }
+  .footer-bottom a:hover {
+    color: red;
+  }
+  #list-top {
+    position: relative;
+    height: 32px;
+    width: 818px;
+    overflow: hidden;
+  }
+  #list-top ul {
+    position: absolute;
+  }
+  #list-top ul li {
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+  }
+  .list-top-box {
+    border: 1px solid #e0e1e2;
+    border-left: none;
+    border-right: none;
+    height: 32px;
+    width: 100%;
+    margin: 10px 0;
+  }
+  #list-top a {
+    color: #65c178;
+  }
+  #list-top a:hover {
+    color: red;
+  }
+  .speaker {
+    width: 13px;
+    height: 19px;
+    float: left;
+    margin: 7px 5px 0 0;
+    background: url(images/speaker.png) no-repeat;
+  }
+  .list-top-t {
+    position: absolute;
+    right: 0px;
+    top: 8px;
+    background: url(images/arrows-black-t.png) no-repeat;
+    width: 8px;
+    height: 6px;
+    display: block;
+  }
+  .list-top-d {
+    position: absolute;
+    right: 0px;
+    top: 19px;
+    background: url(images/arrows-black.png) no-repeat;
+    width: 8px;
+    height: 6px;
+    display: block;
+  }
+  .list-top-t:hover {
+    background: url(images/arrows-green.png) no-repeat;
+  }
+  .list-top-d:hover {
+    background: url(images/arrows-green-d.png) no-repeat;
+  }
+  .arrows-box {
+    position: relative;
+  }
+  .fixed-box-mark {
+    height: 90px;
+    width: 100%;
+    background: #000;
+    filter:alpha(opacity=0);
+    -moz-opacity:0;
+    opacity: 0;
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    bottom: 0;
+  }
+  .fixed-box {
+    height: 90px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left:  0;
+    z-index: 10;
+     filter:alpha(opacity=0);
+    -moz-opacity:0;
+    opacity: 0;
+
+  }
+  .fixed {
+    width: 1190px;
+    margin: 0 auto;
+    padding: 25px 0;
+  }
+  .fixed-exit {
+    position: absolute;
+    display: block;
+    right: 26px;
+    top: 33px;
+    background: url(images/exit-fixed.png) no-repeat;
+    width: 24px;
+    height: 25px;
+  }
+  .fixed a:hover {
+    text-decoration: none;
+  }
+  .fixed-left {
+    float: left;
+  }
+  .fixed-left a {
+    display: block;
+    background: #65c178;
+    height: 40px;
+    width: 140px;
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+    float: left;
+  }
+  .fixed-left span {
+    float: left;
+    color: #fff;
+    line-height: 40px;
+    margin-left: 25px;
+  }
+  .fixed-right {
+    float: right;
+  }
+  .fixed-right a {
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 40px;
+    color: #fff;
+  }
+  .ten {
+    width: 134px;
+    background: #0eb2ff url(images/qq_white.png)  12px 6px no-repeat;
+  }
+ .fixed-right .sina {
+    width: 145px;
+    margin-left: 20px;
+    text-indent: 47px;
+    background: #ff0030 url(images/weibo_white.png)  12px 9px no-repeat;
+  }
+  .helis {
+    width: 130px;
+    background: #65c178;
+
+  }
+  .fixed-right .or {
+    width: 60px;
+    font-size: 20px;
+    text-indent: 0;
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+  }
+  </style>
+  <script src="jquery1.8.3.js"></script>
+  <script>
+    $(function() {
+      $("#so").focus(function(){
+        $(this).css({
+          width:"314"
+        })
+      })
+       $("#so").blur(function(){
+        $(this).css({
+          width:"245"
+        })
+      })
+  // 默认Fixed动画效果
+  $(".fixed-box-mark").animate({
+    "opacity": ".7"
+  });
+  $(".fixed-box").animate({
+    "opacity": "1"
+  });
+  // 点击关闭
+  $(".exit").click(function() {
+    $(".ad").animate({
+      height: "0"
+    })
+  })
+  $(".fixed-exit").click(function() { //底部Fixed关闭
+    $(".fixed-box").animate({
+      "opacity": "0"
+    }, function() {
+      $(this).hide();
+    });
+    $(".fixed-box-mark").animate({
+      "opacity": "0"
+    }, function() {
+      $(this).hide();
+    });
+  })
+
+  $(".new-hot ul li").mouseover(function() {
+    $(this).find("span").stop().animate({
+      height: "0"
+    }, 100);
+    $(this).find("strong").stop().animate({
+      height: "30"
+    }, 100)
+  })
+  $(".new-hot ul li").mouseout(function() {
+    $(this).find("span").stop().animate({
+      height: "30"
+    }, 100);
+    $(this).find("strong").stop().animate({
+      height: "0"
+    }, 100)
+  })
+  //滚动新闻
+  var oListLiOne = $("#list-top ul li").eq(0).clone(true);
+  $("#list-top ul").append(oListLiOne);
+   var baseHeights = $("#list-top ul li").eq(0).height();
+   var num = 0;
+   var timer = null;
+   times();
+  function times() {
+    timer = setInterval(function() {
+      num++;
+      oodadas(num)
+    }, 2000)
+  }
+  $(".list-top-box").mouseover(function() {
+    clearInterval(timer);
+  })
+  $(".list-top-box").mouseout(function() {
+    times();
+  })
+  $(".list-top-t").click(function() {
+    num--;
+    oodadas(num);
+  })
+  $(".list-top-d").click(function() {
+    num++;
+    oodadas(num);
+  })
+
+  function oodadas(index) {
+    if (index > $("#list-top ul li").length - 1) {
+       $("#list-top ul").css({"top":"0"})//拉到第一个
+      index = 1;
+      num = index;
+    }
+    if (index < 0) {
+      $("#list-top ul").css({
+        "top": -($("#list-top ul li").length - 1) * baseHeights
+      })
+      index = $("#list-top ul li").length - 2;
+      num = index;
+    }
+    $("#list-top ul").stop().animate({
+      "top": -index * baseHeights
+    })
+  }
+  //底部动画
+  $(window).scroll(function() {
+    if ($(document).scrollTop() >
+      $("#foot").offset().top - $(window).height()) {
+      var num = 0;
+      var times = setInterval(function() {
+        $("#foot li").each(function(i) {
+          if (num == i) {
+            $("#foot li").eq(i).animate({
+              top: "0"
+            }, 400)
+          }
+          if (num >= $("#foot li").length - 1) {
+            clearInterval(times);
+          }
+        })
+        num++;
+      }, 200)
+    }
+  })
+})
+  </script>
+</head>
+<body>
+  <div class="fixed-box-mark"></div>
+  <div class="fixed-box">
+    <a href="javascript:;" class="fixed-exit"></a>
+    <div class="fixed clear">
+      <div class="fixed-left">
+        <a href="">加入我们</a>
+        <span>发现更多留学体验！</span>
+      </div>
+      <div class="fixed-right">
+        <a href="" class="ten">腾讯QQ登录</a>
+        <a href="" class="sina">新浪微博登录</a>
+        <span class="or">OR</span>
+        <a href="" class="helis">已有账号</a>
+      </div>
+    </div>
+  </div>
+  <div id="header-box">
+    <div class="header">
+      <div class="header-left">
+        <a href="" class="landing">登录</a>
+        <a href="" class="reg">免费注册</a>
+      </div>
+      <div class="header-right">
+        <ul class="down-list">
+          <li class="animat">
+            <a href="" class="list-color">
+              我是校方 <b></b>
+            </a>
+            <div class="down-list-d">
+              <a href="">免费入驻</a>
+              <a href="">找学生</a>
+              <a href="">发布面试</a>
+              <a href="">组织活动</a>
+            </div>
+          </li>
+          <li class="animat">
+            <a href="" class="list-color">
+              我是学生 <b></b>
+            </a>
+            <div class="down-list-d">
+              <a href="">免费入驻</a>
+            </div>
+          </li>
+          <li>
+            <a href="">收藏夹</a>
+          </li>
+          <li>
+            <a href="">申请达人</a>
+          </li>
+          <li>
+            <a href="">面试助手</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="box">
+      <div class="logo-box clear">
+        <div class="logo-left">
+          <a href="">
+            <img src="images/logo.png" alt="" />
+          </a>
+        </div>
+        <div class="logo-center">
+          <ul class="clear">
+            <li>
+              <a href="">院校</a>
+            </li>
+            <li>
+              <a href="">实用</a>
+            </li>
+            <li>
+              <a href="">Shine me</a>
+            </li>
+            <li>
+              <a href="">同城</a>
+            </li>
+          </ul>
+        </div>
+        <div class="logo-right">
+          <div class="input-box clear">
+            <input type="text" name="content" id="so" value="搜索你想去的国家、院校试试" onfocus="if (value =='搜索你想去的国家、院校试试'){this.style.color='#000';value =''}" onblur="if (value ==''){this.style.color='#bababa';value='搜索你想去的国家、院校试试'}" style="color: rgb(204, 204, 204);">
+            <div class="btn"></div>
+          </div>
+          <div class="hot-search clear">
+            <span>热门搜索：</span>
+            <a href="">美国</a>
+            <a href="">英国</a>
+            <a href="">澳洲</a>
+            <a href="">亚洲</a>
+          </div>
+        </div>
+      </div>
+      <div class="ad">
+        <a href="">
+          <img src="images/ad.gif" alt="" />
+        </a>
+        <a href="javascript:;" class="exit"></a>
+      </div>
+      <div class="list-top-box">
+        <div class="speaker"></div>
+        <div id="list-top">
+          <a class="list-top-t"></a>
+          <a class="list-top-d"></a>
+          <ul >
+            <li>
+              <a href="">路言喜111</a>
+              <span>申请完成了</span>
+              <a href="">宾夕法尼亚大学</a>
+            </li>
+            <li>
+              <a href="">路言喜222</a>
+              <span>申请完成了</span>
+              <a href="">宾夕法尼亚大学</a>
+            </li>
+            <li>
+              <a href="">路言喜333</a>
+              <span>申请完成了</span>
+              <a href="">宾夕法尼亚大学</a>
+            </li>
+            <li>
+              <a href="">路言喜4444</a>
+              <span>申请完成了</span>
+              <a href="">宾夕法尼亚大学</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content clear">
+        <div class="cont-left">
+          <div class="cont-tit">院校</div>
+          <ul>
+            <li>
+              <a href="">申请</a>
+            </li>
+            <li>
+              <a href="">面试</a>
+            </li>
+            <li>
+              <a href="">选院校</a>
+            </li>
+            <li>
+              <a href="">选专业</a>
+            </li>
+            <li>
+              <a href="">排行榜</a>
+            </li>
+            <li>
+              <a href="">分类</a>
+            </li>
+            <li>
+              <a href="">校评</a>
+            </li>
+            <li>
+              <a href="">实地视频</a>
+            </li>
+          </ul>
+        </div>
+        <div class="cont-center">
+          <div class="cont-cent-top clear">
+            <div class="cont-tit cent-left">正在申请</div>
+            <div class="cent-right">
+              <p>
+                <b class="pc"></b>
+                <span>在线面试</span>
+              </p>
+              <p>
+                <b class="phone"></b>
+                <span>电话面试</span>
+              </p>
+              <p>
+                <b class="down"></b>
+                <span>线下面试</span>
+              </p>
+              <p>
+                <b class="top"></b>
+                <span>材料提交</span>
+              </p>
+              <p>
+                <b class="ems"></b>
+                <span>线下寄送</span>
+              </p>
+            </div>
+          </div>
+          <div class="speaking-list">
+            <ul>
+              <li>
+                <div class="spea-top">
+                  <div class="sepa-box clear">
+                    <a href="">
+                      <img src="images/spea.gif" alt="" />
+                    </a>
+                    <div class="spea-top-right">
+                      <a href="">
+                        <div class="spea-top-tit">
+                          <p>苏塞克斯大学</p>
+                          <span>University of Warwick</span>
+                        </div>
+                      </a>
+                      <div class="spea-top-way">
+                        <span>申请方式:</span>
+                        <b title="在线面试" class="pc"></b>
+                        <b title="电话面试" class="phone"></b>
+                        <b title="线下面试" class="down"></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="spea-grade clear">
+                    <div class="spea-grade-width">
+                      <b></b> <u></u>
+                    </div>
+                    <span>5.8</span>
+                  </div>
+                  <div class="sepa-time">
+                    <span>申请时间：</span>
+                    2014.08.23-2014.09.24
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="spea-top">
+                  <div class="sepa-box clear">
+                    <a href="">
+                      <img src="images/spea.gif" alt="" />
+                    </a>
+                    <div class="spea-top-right">
+                      <a href="">
+                        <div class="spea-top-tit">
+                          <p>苏塞克斯大学</p>
+                          <span>University of Warwick</span>
+                        </div>
+                      </a>
+                      <div class="spea-top-way">
+                        <span>申请方式:</span>
+                        <b title="在线面试" class="pc"></b>
+                        <b title="电话面试" class="phone"></b>
+                        <b title="线下面试" class="down"></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="spea-grade clear">
+                    <div class="spea-grade-width">
+                      <b></b> <u></u>
+                    </div>
+                    <span>5.8</span>
+                  </div>
+                  <div class="sepa-time">
+                    <span>申请时间：</span>
+                    2014.08.23-2014.09.24
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="spea-top">
+                  <div class="sepa-box clear">
+                    <a href="">
+                      <img src="images/spea.gif" alt="" />
+                    </a>
+                    <div class="spea-top-right">
+                      <a href="">
+                        <div class="spea-top-tit">
+                          <p>苏塞克斯大学</p>
+                          <span>University of Warwick</span>
+                        </div>
+                      </a>
+                      <div class="spea-top-way">
+                        <span>申请方式:</span>
+                        <b title="在线面试" class="pc"></b>
+                        <b title="电话面试" class="phone"></b>
+                        <b title="线下面试" class="down"></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="spea-grade clear">
+                    <div class="spea-grade-width">
+                      <b></b>
+                      <u></u>
+                    </div>
+                    <span>5.8</span>
+                  </div>
+                  <div class="sepa-time">
+                    <span>申请时间：</span>
+                    2014.08.23-2014.09.24
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="spea-top">
+                  <div class="sepa-box clear">
+                    <a href="">
+                      <img src="images/spea.gif" alt="" />
+                    </a>
+                    <div class="spea-top-right">
+                      <a href="">
+                        <div class="spea-top-tit">
+                          <p>苏塞克斯大学</p>
+                          <span>University of Warwick</span>
+                        </div>
+                      </a>
+                      <div class="spea-top-way">
+                        <span>申请方式:</span>
+                        <b title="在线面试" class="pc"></b>
+                        <b title="电话面试" class="phone"></b>
+                        <b title="线下面试" class="down"></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="spea-grade clear">
+                    <div class="spea-grade-width">
+                      <b></b>
+                      <u></u>
+                    </div>
+                    <span>5.8</span>
+                  </div>
+                  <div class="sepa-time">
+                    <span>申请时间：</span>
+                    2014.08.23-2014.09.24
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="spea-top">
+                  <div class="sepa-box clear">
+                    <a href="">
+                      <img src="images/spea.gif" alt="" />
+                    </a>
+                    <div class="spea-top-right">
+                      <a href="">
+                        <div class="spea-top-tit">
+                          <p>苏塞克斯大学</p>
+                          <span>University of Warwick</span>
+                        </div>
+                      </a>
+                      <div class="spea-top-way">
+                        <span>申请方式:</span>
+                        <b title="在线面试" class="pc"></b>
+                        <b title="电话面试" class="phone"></b>
+                        <b title="线下面试" class="down"></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="spea-grade clear">
+                    <div class="spea-grade-width">
+                      <b></b>
+                      <u></u>
+                    </div>
+                    <span>5.8</span>
+                  </div>
+                  <div class="sepa-time">
+                    <span>申请时间：</span>
+                    2014.08.23-2014.09.24
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="spea-top">
+                  <div class="sepa-box clear">
+                    <a href="">
+                      <img src="images/spea.gif" alt="" />
+                    </a>
+                    <div class="spea-top-right">
+                      <a href="">
+                        <div class="spea-top-tit">
+                          <p>苏塞克斯大学</p>
+                          <span>University of Warwick</span>
+                        </div>
+                      </a>
+                      <div class="spea-top-way">
+                        <span>申请方式:</span>
+                        <b title="在线面试" class="pc"></b>
+                        <b title="电话面试" class="phone"></b>
+                        <b title="线下面试" class="down"></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="spea-grade clear">
+                    <div class="spea-grade-width">
+                      <b></b>
+                      <u></u>
+                    </div>
+                    <span>5.8</span>
+                  </div>
+                  <div class="sepa-time">
+                    <span>申请时间：</span>
+                    2014.08.23-2014.09.24
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="spea-top">
+                  <div class="sepa-box clear">
+                    <a href="">
+                      <img src="images/spea.gif" alt="" />
+                    </a>
+                    <div class="spea-top-right">
+                      <a href="">
+                        <div class="spea-top-tit">
+                          <p>苏塞克斯大学</p>
+                          <span>University of Warwick</span>
+                        </div>
+                      </a>
+                      <div class="spea-top-way">
+                        <span>申请方式:</span>
+                        <b title="在线面试" class="pc"></b>
+                        <b title="电话面试" class="phone"></b>
+                        <b title="线下面试" class="down"></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="spea-grade clear">
+                    <div class="spea-grade-width">
+                      <b></b>
+                      <u></u>
+                    </div>
+                    <span>5.8</span>
+                  </div>
+                  <div class="sepa-time">
+                    <span>申请时间：</span>
+                    2014.08.23-2014.09.24
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="spea-top">
+                  <div class="sepa-box clear">
+                    <a href="">
+                      <img src="images/spea.gif" alt="" />
+                    </a>
+                    <div class="spea-top-right">
+                      <a href="">
+                        <div class="spea-top-tit">
+                          <p>苏塞克斯大学</p>
+                          <span>University of Warwick</span>
+                        </div>
+                      </a>
+                      <div class="spea-top-way">
+                        <span>申请方式:</span>
+                        <b title="在线面试" class="pc"></b>
+                        <b title="电话面试" class="phone"></b>
+                        <b title="线下面试" class="down"></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="spea-grade clear">
+                    <div class="spea-grade-width">
+                      <b></b>
+                      <u></u>
+                    </div>
+                    <span>5.8</span>
+                  </div>
+                  <div class="sepa-time">
+                    <span>申请时间：</span>
+                    2014.08.23-2014.09.24
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="spea-top">
+                  <div class="sepa-box clear">
+                    <a href="">
+                      <img src="images/spea.gif" alt="" />
+                    </a>
+                    <div class="spea-top-right">
+                      <a href="">
+                        <div class="spea-top-tit">
+                          <p>苏塞克斯大学</p>
+                          <span>University of Warwick</span>
+                        </div>
+                      </a>
+                      <div class="spea-top-way">
+                        <span>申请方式:</span>
+                        <b title="在线面试" class="pc"></b>
+                        <b title="电话面试" class="phone"></b>
+                        <b title="线下面试" class="down"></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="spea-grade clear">
+                    <div class="spea-grade-width">
+                      <b></b>
+                      <u></u>
+                    </div>
+                    <span>5.8</span>
+                  </div>
+                  <div class="sepa-time">
+                    <span>申请时间：</span>
+                    2014.08.23-2014.09.24
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="cont-right">
+          <div class="cont-tit">院校分类</div>
+          <div class="classify clear">
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+            <a href="">美国</a>
+          </div>
+          <div class="cont-tit">近期热门</div>
+          <div class="new-hot">
+            <ul>
+              <li style="border-top:none;">
+                <a href="">
+                  <b>1.</b>
+                  <img src="images/spea.gif" alt="" />
+                  <p>
+                    <span>哈佛大学</span> <strong>hafoudaxue</strong>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <b>1.</b>
+                  <img src="images/spea.gif" alt="" />
+                  <p>
+                    <span>哈佛大学</span> <strong>hafoudaxue</strong>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <b>1.</b>
+                  <img src="images/spea.gif" alt="" />
+                  <p>
+                    <span>哈佛大学</span>
+                    <strong>hafoudaxue</strong>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <b>1.</b>
+                  <img src="images/spea.gif" alt="" />
+                  <p>
+                    <span>哈佛大学</span>
+                    <strong>hafoudaxue</strong>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <b>1.</b>
+                  <img src="images/spea.gif" alt="" />
+                  <p>
+                    <span>哈佛大学</span>
+                    <strong>hafoudaxue</strong>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <b>1.</b>
+                  <img src="images/spea.gif" alt="" />
+                  <p>
+                    <span>哈佛大学</span>
+                    <strong>hafoudaxue</strong>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <b>1.</b>
+                  <img src="images/spea.gif" alt="" />
+                  <p>
+                    <span>哈佛大学</span>
+                    <strong>hafoudaxue</strong>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <b>1.</b>
+                  <img src="images/spea.gif" alt="" />
+                  <p>
+                    <span>哈佛大学</span>
+                    <strong>hafoudaxue</strong>
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Shine me -->
+    <div class="shine-box">
+      <div class="shine clear">
+        <div class="shine-left">
+          <div class="cont-tit">Shine me</div>
+          <ul>
+            <li>
+              <a href="">
+                <embed src="http://player.youku.com/player.php/sid/XODUwMTIzNzc2/v.swf" allowFullScreen="true" quality="high" width="180" height="180" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+            </a>
+            <p>
+              <a href="">德国申请十大攻略</a>
+              <span>-Robber</span>
+            </p>
+          </li>
+          <li>
+            <a href="">
+              <object width="180" height="180">
+                <param name="allowFullScreen" value="true">
+                <param name="flashVars" value="id=21478342" />
+                <param name="movie" value="http://i7.imgs.letv.com/player/swfPlayer.swf?autoplay=0" />
+                <embed src="http://i7.imgs.letv.com/player/swfPlayer.swf?autoplay=0" flashVars="id=21478342" width="541" height="450" allowFullScreen="true" type="application/x-shockwave-flash" />
+              </object>
+            </a>
+            <p>
+              <a href="">德国申请十大攻略德国申请十大攻略</a>
+              <span>-Robber</span>
+            </p>
+          </li>
+          <li>
+            <a href="">
+              <img src="images/bbs.png" alt="" />
+            </a>
+            <p>
+              <a href="">德国申请十大攻略</a>
+              <span>-Robber</span>
+            </p>
+          </li>
+          <li>
+            <a href="">
+              <img src="images/bbs.png" alt="" />
+            </a>
+            <p>
+              <a href="">德国申请十大攻略</a>
+              <span>-Robber</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="shine-center">
+        <div class="cont-tit"></div>
+        <div class="shine-cent-tit">
+          <a href="">
+            <p>我只想安静地努力一会</p>
+            <span>
+              飞行官小北的日记
+              <br/>
+              回北京第二个年头了。我不是北京人，之所以说回，是因为这是我第二次决定留在北京..
+            </span>
+          </a>
+        </div>
+        <div class="shine-cent-list">
+          <ul class="clear">
+            <li>
+              <a href="">爱更多的是一种态度</a>
+            </li>
+            <li>
+              <a href="">爱更多的是一种态度</a>
+            </li>
+            <li>
+              <a href="">爱更多的是一种态度</a>
+            </li>
+            <li>
+              <a href="">爱更多的是一种态度</a>
+            </li>
+            <li>
+              <a href="">爱更多的是一种态度</a>
+            </li>
+            <li>
+              <a href="">爱更多的是一种态度</a>
+            </li>
+            <li>
+              <a href="">爱更多的是一种态度</a>
+            </li>
+            <li>
+              <a href="">爱更多的是一种态度</a>
+            </li>
+            <li>
+              <a href="">爱更多的是一种态度</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="shine-right">
+        <div class="shine-ad">
+          <a href="">
+            <img src="images/ad2.png" alt="" />
+          </a>
+        </div>
+        <div class="cont-tit">线上活动</div>
+        <ul class="shine-right-list">
+          <li>
+            <a href="">想和你一起，把所有风景都看透</a>
+            <p>时间：10月27日 - 12月31日</p>
+            <p>1316人参加</p>
+          </li>
+          <li>
+            <a href="">想和你一起，把所有风景都看透</a>
+            <p>时间：10月27日 - 12月31日</p>
+            <p>1316人参加</p>
+          </li>
+          <li>
+            <a href="">想和你一起，把所有风景都看透</a>
+            <p>时间：10月27日 - 12月31日</p>
+            <p>1316人参加</p>
+          </li>
+          <li>
+            <a href="">想和你一起，把所有风景都看透</a>
+            <p>时间：10月27日 - 12月31日</p>
+            <p>1316人参加</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 热门下载 -->
+  <div class="down-cont">
+    <div class="content clear">
+      <div class="cont-left">
+        <div class="cont-tit">实用</div>
+        <ul>
+          <li>
+            <a href="">分类浏览</a>
+          </li>
+          <li>
+            <a href="">下载</a>
+          </li>
+          <li>
+            <a href="">上传</a>
+          </li>
+          <li>
+            <a href="">料评</a>
+          </li>
+          <li>
+            <a href="">48小时文书</a>
+          </li>
+          <li>
+            <a href="">留学金融</a>
+          </li>
+        </ul>
+      </div>
+      <div class="cont-center">
+        <div class="cont-cent-top clear">
+          <div class="cont-tit cent-left">热门下载</div>
+        </div>
+        <div class="down-cont-list">
+          <ul class="clear">
+            <li>
+              <a href="">
+                <img src="images/ad3.png" alt="" />
+              </a>
+              <p>雅思大全</p>
+              <p>上传者：Robber</p>
+              <p>
+                <a href="">免费下载</a>
+              </p>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/ad3.png" alt="" />
+              </a>
+              <p>雅思大全</p>
+              <p>上传者：Robber</p>
+              <p>
+                <a href="">免费下载</a>
+              </p>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/ad3.png" alt="" />
+              </a>
+              <p>雅思大全</p>
+              <p>上传者：Robber</p>
+              <p>
+                <a href="">免费下载</a>
+              </p>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/ad3.png" alt="" />
+              </a>
+              <p>雅思大全</p>
+              <p>上传者：Robber</p>
+              <p>
+                <a href="">免费下载</a>
+              </p>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/ad3.png" alt="" />
+              </a>
+              <p>雅思大全</p>
+              <p>上传者：Robber</p>
+              <p>
+                <a href="">免费下载</a>
+              </p>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/ad3.png" alt="" />
+              </a>
+              <p>雅思大全</p>
+              <p>上传者：Robber</p>
+              <p>
+                <a href="">免费下载</a>
+              </p>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/ad3.png" alt="" />
+              </a>
+              <p>雅思大全</p>
+              <p>上传者：Robber</p>
+              <p>
+                <a href="">免费下载</a>
+              </p>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/ad3.png" alt="" />
+              </a>
+              <p>雅思大全</p>
+              <p>上传者：Robber</p>
+              <p>
+                <a href="">免费下载</a>
+              </p>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/ad3.png" alt="" />
+              </a>
+              <p>雅思大全</p>
+              <p>上传者：Robber</p>
+              <p>
+                <a href="">免费下载</a>
+              </p>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/ad3.png" alt="" />
+              </a>
+              <p>雅思大全</p>
+              <p>上传者：Robber</p>
+              <p>
+                <a href="">免费下载</a>
+              </p>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/ad3.png" alt="" />
+              </a>
+              <p>雅思大全</p>
+              <p>上传者：Robber</p>
+              <p>
+                <a href="">免费下载</a>
+              </p>
+            </li>
+            <li>
+              <a href="">
+                <img src="images/ad3.png" alt="" />
+              </a>
+              <p>雅思大全</p>
+              <p>上传者：Robber</p>
+              <p>
+                <a href="">免费下载</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="cont-right">
+        <div class="cont-tit">实用分类</div>
+        <div class="classify clear">
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+          <a href="">美国</a>
+        </div>
+        <div class="cont-tit">近期热门</div>
+        <div class="new-hot">
+          <ul>
+            <li style="border-top:none;">
+              <a href="">
+                <b>1.</b>
+                <img src="images/spea.gif" alt="">
+                <p>
+                  <span>哈佛大学</span>
+                  <strong>hafoudaxue</strong>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <b>1.</b>
+                <img src="images/spea.gif" alt="">
+                <p>
+                  <span>哈佛大学</span>
+                  <strong>hafoudaxue</strong>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <b>1.</b>
+                <img src="images/spea.gif" alt="">
+                <p>
+                  <span>哈佛大学</span>
+                  <strong>hafoudaxue</strong>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <b>1.</b>
+                <img src="images/spea.gif" alt="">
+                <p>
+                  <span>哈佛大学</span>
+                  <strong>hafoudaxue</strong>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <b>1.</b>
+                <img src="images/spea.gif" alt="">
+                <p>
+                  <span>哈佛大学</span>
+                  <strong>hafoudaxue</strong>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <b>1.</b>
+                <img src="images/spea.gif" alt="">
+                <p>
+                  <span>哈佛大学</span>
+                  <strong>hafoudaxue</strong>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <b>1.</b>
+                <img src="images/spea.gif" alt="">
+                <p>
+                  <span>哈佛大学</span>
+                  <strong>hafoudaxue</strong>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <b>1.</b>
+                <img src="images/spea.gif" alt="">
+                <p>
+                  <span>哈佛大学</span>
+                  <strong>hafoudaxue</strong>
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="step-box">
+        <div class="cont-tit">申请4步走</div>
+        <ul class="clear" id="foot">
+          <li class="step-1">
+            <div class="inis">
+              <img src="images/inis.png" alt="" />
+              <div class="step">
+                <p>选择院校</p>
+                <span>这里有上千所顶级院校，等待这你！</span>
+              </div>
+            </div>
+            <div class="arrows-box">
+              <div class="arrows"></div>
+            </div>
+          </li>
+          <li class="step-2">
+            <div class="inis">
+              <img src="images/surface.png" alt="" />
+              <div class="step">
+                <p>预约在线面试</p>
+                <span>这里有上千所顶级院校，等待这你！</span>
+              </div>
+            </div>
+            <div class="arrows-box">
+              <div class="arrows"></div>
+            </div>
+          </li>
+          <li class="step-3">
+            <div class="inis">
+              <img src="images/list-go.png" alt="" />
+              <div class="step">
+                <p>线上提交材料</p>
+                <span>这里有上千所顶级院校，等待这你！</span>
+              </div>
+            </div>
+            <div class="arrows-box">
+              <div class="arrows"></div>
+            </div>
+          </li>
+          <li class="step-4">
+            <div class="inis">
+              <img src="images/offer.png" alt="" />
+              <div class="step">
+                <p>获得offer</p>
+                <span>这里有上千所顶级院校，等待这你！</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-box">
+    <div class="footer clear">
+      <div class="footer-left clear">
+        <ul>
+          <li>
+            <div class="footer-ul-li-tit">我是学生</div>
+          </li>
+          <li>
+            <a href="">注册新用户</a>
+          </li>
+          <li>
+            <a href="">申请流程</a>
+          </li>
+          <li>
+            <a href="">规则公告</a>
+          </li>
+          <li>
+            <a href="">offer墙</a>
+          </li>
+          <li>
+            <a href="">关于我们</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <div class="footer-ul-li-tit">我是校方</div>
+          </li>
+          <li>
+            <a href="">申请入驻</a>
+          </li>
+          <li>
+            <a href="">申请流程</a>
+          </li>
+          <li>
+            <a href="">规则公告</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <div class="footer-ul-li-tit">综合服务</div>
+          </li>
+          <li>
+            <a href="">汇率换算</a>
+          </li>
+          <li>
+            <a href="">GPA换算</a>
+          </li>
+          <li>
+            <a href="">机票服务</a>
+          </li>
+          <li>
+            <a href="">留学贷款</a>
+          </li>
+          <li>
+            <a href="">申请材料生成器</a>
+          </li>
+          <li>
+            <a href="">语言学习</a>
+          </li>
+          <li>
+            <a href="">境外住宿</a>
+          </li>
+          <li>
+            <a href="">境外服务</a>
+          </li>
+          <li>
+            <a href="">公证认证</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <div class="footer-ul-li-tit">问题中心</div>
+          </li>
+          <li>
+            <a href="">留学问题</a>
+          </li>
+          <li>
+            <a href="">申请问题</a>
+          </li>
+          <li>
+            <a href="">留学问题</a>
+          </li>
+          <li>
+            <a href="">申请问题</a>
+          </li>
+          <li>
+            <a href="">留学问题</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-rigth">
+        <img src="images/mark.png" alt="" />
+        <p>offervisa微信公众账号</p>
+      </div>
+    </div>
+    <div class="footer-bottom-box">
+      <div class="footer-bottom">
+        <p>
+          <span>友情链接：</span>
+          <a href="">A5站长网</a>
+          <a href="">昵图素材网</a>
+          <a href="">美丽说</a>
+          <a href="">美丽说</a>
+          <a href="">美丽说</a>
+          <a href="">美丽说</a>
+          <a href="">美丽说</a>
+          <a href="">美丽说</a>
+          <a href="">美丽说</a>
+          <a href="">美丽说</a>
+          <a href="">更多>></a>
+        </p>
+        <p>Copyright 2005-2014 offervosa.com 版权所有 豫ICP备10202274-1号</p>
+        <p class="share">
+          <span>分享到：</span>
+          <a href="">
+            <img src="images/weibo.png" alt="" />
+          </a>
+          <a href="">
+            <img src="images/qq.png" alt="" />
+          </a>
+          <a href="">
+            <img src="images/weixin.png" alt="" />
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
