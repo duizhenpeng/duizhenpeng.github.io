@@ -850,9 +850,17 @@ p.news-active {
 .home-logo {
   width: 83px;
   height: 83px;
-  background: #4093e1 url(../images/images6/LOGO.png) center center no-repeat;
+  background: #4093e1 ;
   transform: rotate(0deg);
   border-radius: 50%;
+  position: relative;
+}
+.home-logo  img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%,-50%,0);
+  transform: translate3d(-50%,-50%,0);
 }
 .home-box {
   width: 100%;
