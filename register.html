@@ -1,0 +1,768 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>注册</title>
+    <link href='css/nprogress.css' rel='stylesheet' />
+    <style type="text/css">
+    *{ padding: 0;margin: 0; font-size: 12px;  font-family: "Microsoft YaHei","微软雅黑","Helvetica Neue","Helvetica","Arial","sans-serif";color: #575757; }
+    ul li{ list-style:none; }
+    img { border: none; }
+    body { background: #fff; }
+    a {
+        color: #444;
+        text-decoration: none;
+        -webkit-transition: text-decoration .4s,color .4s,background .4s;
+        -moz-transition: text-decoration .4s,color .4s,background .4s;
+        transition:text-decoration .4s,color .4s,background .4s;
+    }
+    a:hover { color: #65c178;text-decoration: underline; }
+    .clear:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .logo-right a:hover {
+        color: #65c178;text-decoration: underline;
+    }
+    .logo-box {
+        width: 100%;
+        background: #f0f3f6;
+    }
+    .logo {
+        width: 1190px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .logo-left {
+        margin-top: 33px;
+        float: left;
+    }
+
+    .logo-right a {
+        margin: 0 10px;
+        color: #65c178;
+    }
+    .register-box {
+        width: 100%;
+        background: #fff;
+        display: none;
+    }
+    .register {
+        width: 1190px;
+        margin: 0 auto;
+    }
+    .reg-left {
+        float: left;
+    }
+    .reg-tit {
+        color: #525252;
+        font-size: 24px;
+        margin: 20px 0 37px 123px;
+    }
+    .reg li {
+        height: 50px;
+        line-height: 37px;
+        margin: 10px 0;
+    }
+    .reg li.input-text {
+        line-height: 50px;
+    }
+    .reg li p {
+        float: left;
+        width: 86px;
+        text-align: right;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+    }
+    .reg li input {
+        width: 282px;
+        line-height: 18px;
+        height: 18px;
+        padding: 15px 10px;
+        float: left;
+        border: 1px solid #d2d2d2;
+        outline:none;
+        z-index: 3;
+    }
+    .reg li.input-num input {
+       position: absolute;
+    }
+    .phone-verify {
+        width: 175px;
+    }
+    .get-verify {
+        display: block;
+        float: left;
+        width: 90px;
+        height: 37px;
+        text-align: center;
+        color: #fff;
+        margin-left: 10px;
+        background: #6e6e6e;
+    }
+    .get-verify:hover{
+        color: #fff;
+        text-decoration: none;
+    }
+    .reg li img {
+        float: left;
+    }
+    .renewal {
+        float: left;
+        margin: 21px 0 0 6px;
+    }
+    .reg li input.reg-checkbox {
+        width: 11px;
+        height: 11px;
+        margin: 13px 5px 0 0;
+    }
+    .sub {
+        display: block;
+        float: left;
+        width: 95px;
+        height: 35px;
+        text-align: center;
+        color: #fff;
+        background: #ff8a00;
+    }
+    .sub:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer-box {
+        height: 128px;
+        line-height: 128px;
+        text-align: center;
+        width: 100%;
+        background: #f0f3f6;
+    }
+    .footer {
+        width: 1190px;
+        margin: 0 auto;
+    }
+    .forget {
+        color: #666666;
+        text-decoration: underline;
+        float: left;
+        margin: 0 0 0 5px;
+    }
+    .tab-list li a {
+        display: block;
+        width: 110px;
+        height: 37px;
+        text-align: center;
+        line-height: 37px;
+        background: #4f5f6f;
+        color: #fff;
+        float: left;
+    }
+    .tab-list li a:hover {
+        background: #65c178;
+        text-decoration: none;
+    }
+    .tab-list li a.active {
+        background: #65c178;
+    }
+    .tab-list {
+        padding: 10px 0 0 0;
+    }
+    .input-box {
+        position: relative;
+        float: left;
+        text-indent: 5px;
+        width: 304px;
+    }
+    .input-box .input-tip {
+        position: absolute;
+        top: 0px;
+        right: 0;
+        height: 48px;
+        line-height: 48px;
+        background: #ffffe0;
+        border: 1px solid #d2d2d2;
+        border-left: none;
+        width: 240px;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .input-box .input-tip b {
+        display: inline-block;
+        width: 16px;
+        height: 15px;
+        background:  url(images/images/mistake.png)  no-repeat;
+        float: left;
+        margin-top: 16px;
+    }
+    .input-tip-min {
+        padding: 0 20px;
+    }
+    .input-box div.input-tip-yes {
+        background: none;
+        border: none;
+    }
+    .input-box div.input-tip-yes b {
+        background: url(images/images/correct.png) no-repeat;
+    }
+    .reg  label {
+        float: left;
+        margin-left: 2px;
+    }
+    .input-tip-yes span {
+        display: none;
+    }
+    .logo-tip {
+        font-size: 14px;
+        color: #424242;
+        padding: 39px 0 15px 0;
+    }
+    .back-home {
+        display: block;
+        width: 113px;
+        height: 37px;
+        line-height: 37px;
+        text-indent: 23px;
+        background: #5e5e5e;
+        position: absolute;
+        right: 0;
+        top: 0;
+        overflow: hidden;
+
+    }
+    .back-home:hover {
+        text-decoration: none;
+    }
+    #home {
+        display: none;
+    }
+    .max-box-one {
+        width: 100%;
+    }
+    .max-box {
+        width: 100%;
+        top:0;
+    }
+    .max-box-loading {
+        position: fixed;
+        left: 50%;
+        margin: -24px 0 0 -24px;
+        width: 48px;
+        height: 48px;
+        top: 50%;
+        display: none;
+    }
+    .back-home b {
+        color: #fff;
+        display: block;
+        height: 37px;
+        overflow: hidden;
+        font-weight: normal;
+        background: url(images/images/arraw-top.png) 77px 16px no-repeat;
+        -moz-transition: height .3s cubic-bezier(0.86,0,0.07,1);
+        -webkit-transition: height .3s cubic-bezier(0.86,0,0.07,1);
+        transition: height .3s cubic-bezier(0.86,0,0.07,1);
+    }
+
+    .back-home span {
+        display: block;
+        height: 37px;
+        background: #65c178 url(images/images/arraw-top.png) 77px 16px no-repeat;
+        color: #fff;
+    }
+    .back-home:hover b {
+        height: 0px;
+    }
+    .img-verify {
+        margin-top: 10px;
+    }
+    .reg li.input-sub-box {
+        height: 41px;
+    }
+    .reg {
+        padding-top: 12px;
+    }
+
+  </style>
+    <script type="text/javascript" src="js/jquery1.8.3.js"></script>
+    <script src='js/nprogress.js'></script>
+    <script type="text/javascript" src="js/pace.min.js"></script>
+    <link rel="stylesheet" href="css/pace.css" />
+    <script type="text/javascript">
+  $(function(){
+    //页面切换
+    $(".register-box").eq(0).show();
+        $(".tab-list a").each(function(i){
+            $(this).click(function(){
+            $(".tab-list a").removeClass("active");
+            $(this).addClass("active");
+            $(".register-box").hide();
+            $(".register-box").eq(i).show();
+             $(".register-max-box").css({
+                marginTop:"0",
+                marginBottom:"0"
+             })
+             oHeight();
+        })
+    })
+    //窗口高度
+    oHeight();
+       $(window).resize(function(){
+            oHeight();
+       })
+       function oHeight(){
+         if($(window).height()>$(".max-box").height()){
+          var oDiffer = ($(window).height()-$(".logo-box").height()-$(".footer-box").height()-$(".register-max-box").height())/2;
+             $(".register-max-box").css({
+                marginTop:oDiffer,
+                marginBottom:oDiffer
+             })
+         }
+       }
+    //返回首页
+    var oInit = true;
+    $(".back-home").click(function(){
+        $(".max-box-loading").show();
+        var oHome = $("#home"),
+          oMaxBox = $(".max-box");
+          oHome.attr("src","index.html");
+        oHome.load(function(){
+            if(oInit){
+                oInit = false;
+                $(".max-box-loading").hide();
+                var oMaxHeight = $(".max-box").height();
+                oMaxBox.css({
+                  position:"fixed"
+                })
+                oMaxBox.animate({
+                  top: -oMaxHeight
+                },800)
+                oHome.css({
+                    height: $(window).height(),
+                    width: "100%"
+                })
+                oHome.show();
+                document.title="录趣网";
+            }
+            $(window).resize(function(){
+                 oHome.css({
+                    height: $(window).height(),
+                    width: "100%"
+                })
+            })
+        })
+    })
+    var moblie = /^1[3578]\d{9}$/;
+    $(".input-phone input").blur(function(){
+        if (moblie.test($(this).val())){//手机号码验证
+            oVia=true;
+            Validation(oVia,$(this));
+        }else{
+            oVia=false;
+            Validation(oVia,$(this));
+        }
+    })
+    //学生注册验证
+    var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;//邮箱验证
+    var oVia = false;
+    var oFromVia = true;
+    $(".reg-one .sub").click(function(){
+         oFromVia = true;
+         Vali(".reg-one");
+         console.log(oFromVia);//表单1提交true提交
+         if(oFromVia){
+            $(this).parents("form").submit();
+         }
+    })
+    $(".reg-two .sub").click(function(){
+         oFromVia = true;
+         Vali(".reg-two");
+         console.log(oFromVia);//表单2提交true提交
+         if(oFromVia){
+            $(this).parents("form").submit();
+         }
+    })
+     $(".email input").blur(function(){//邮箱验证
+       if(reg.test($(this).val())){
+        oVia=true;
+        Validation(oVia,$(this));
+       }else{
+        oVia=false;
+        Validation(oVia,$(this));
+       }
+    })
+    $(".input-veri input").blur(function(){
+       if ($(".input-veri input").val()!=""){//手机号码验证
+            oVia=true;
+            Validation(oVia,$(".input-veri input"));
+        }else{
+            oVia=false;
+            Validation(oVia,$(".input-veri input"));
+        }
+    })
+      $(".input-name input").blur(function(){
+       if ($(".input-name input").val()!=""){//不能为空验证院校名称验证
+            oVia=true;
+            Validation(oVia,$(".input-name input"));
+        }else{
+            oVia=false;
+            Validation(oVia,$(".input-name input"));
+        }
+    })
+    function Vali(obj){
+        if ($(obj+" .input-name input").val()!=""){//院校名称
+            oVia=true;
+            Validation(oVia,$(obj+" .input-name input"));
+        }else{
+            oFromVia = false;
+            oVia=false;
+            Validation(oVia,$(obj+" .input-name input"));
+        }
+        if (moblie.test($(obj+" .input-phone input").val())){//手机号码验证
+            oVia=true;
+            Validation(oVia,$(obj+" .input-phone input"));
+        }else{
+            oFromVia = false;
+            oVia=false;
+            Validation(oVia,$(obj+" .input-phone input"));
+        }
+        if ($(obj+" .input-veri input").val()!=""){//手机号码验证
+            oVia=true;
+            Validation(oVia,$(obj+" .input-veri input"));
+        }else{
+            oFromVia = false;
+            oVia=false;
+            Validation(oVia,$(obj+" .input-veri input"));
+        }
+        passwordOne(obj);
+       if(reg.test($(obj+" .email input").val())){//邮箱验证
+           oVia=true;
+           Validation(oVia,$(obj+" .email input"));
+      }else{
+        oFromVia = false;
+        oVia=false;
+        Validation(oVia,$(obj+" .email input"));
+      }
+        if($(obj+" .reg-checkbox").attr("checked")!="checked"){
+            oFromVia = false;
+            msg("请阅读并接受版权声明和隐私保护条款");
+        }
+    }
+
+    $(".reg-one .pass-one input").blur(function(){
+        passwordOne(".reg-one");
+    })
+    $(".reg-one .pass-two input").blur(function(){
+        passwordOne(".reg-one");
+    })
+    $(".reg-two .pass-one input").blur(function(){
+        passwordOne(".reg-two");
+    })
+    $(".reg-two .pass-two input").blur(function(){
+        passwordOne(".reg-two");
+    })
+    function passwordOne(obj){
+        if($(obj+" .pass-one input").val()!=""||$(obj+" .pass-two input").val()!=""){//不为空
+          if($(obj+" .pass-one input").val()==$(obj+" .pass-two input").val()){
+            oVia=true;
+            Validation(oVia,$(obj+" .pass-one input"));
+            Validation(oVia,$(obj+" .pass-two input"));
+          }else{//两次密码不一致
+            oFromVia = false;
+            $(obj+" .pass-one  .input-tip-min").html("<b></b><span>两次密码不一致</span>")
+            $(obj+" .pass-two  .input-tip-min").html("<b></b><span>请重复输入密码</span>")
+            oVia=false;
+            Validation(oVia,$(obj+" .pass-one input"));
+            Validation(oVia,$(obj+" .pass-two input"));
+          }
+       }else{//未填写密码
+        oFromVia = false;
+             oVia=false;
+            Validation(oVia,$(obj+" .pass-one input"));
+            Validation(oVia,$(obj+" .pass-two input"));
+       }
+    }
+        function Validation(condition,obj){
+          if(condition){//表单正确
+               var oThis = obj;
+           if(oThis.siblings(".input-tip").attr("class")!="input-tip input-tip-yes"){
+                   oThis.siblings(".input-tip").animate({
+                        right: 0
+                     },100,function(){
+                         oThis.siblings(".input-tip").addClass("input-tip-yes");
+                        oThis.siblings(".input-tip").animate({
+                            right: -241
+                         },200)
+                     })
+                }
+          }else{//表单错误
+                 var oThis = obj;
+                 if(oThis.siblings(".input-tip").attr("class")=="input-tip input-tip-yes"){
+                    oThis.siblings(".input-tip").removeClass("input-tip-yes");
+                    oThis.siblings(".input-tip").animate({
+                        right: 0
+                     },200)
+                     oThis.siblings(".input-tip").animate({
+                        right: -241
+                     },200)
+                 }else{
+                     oThis.siblings(".input-tip").animate({
+                        right: -241
+                     },200)
+                 }
+          }
+      }
+      //我已阅读点击选中
+      $(".reg-checkbox").siblings("label").click(function(){
+            if($(this).siblings(".reg-checkbox").attr("checked")=="checked"){
+                $(this).siblings(".reg-checkbox").attr("checked",false);
+            }else{
+                $(this).siblings(".reg-checkbox").attr("checked",true);
+            }
+      })
+      var oStop = true;
+      function msg(obj){
+        if(oStop){
+            oStop = false;
+            $("body").append("<div class='fixed-msg' style='position:fixed;z-index:99999;color:#fff;left:50%;top:50%;padding:10px 20px;background:#868686;border-radius:5px;'>"+obj+"</div>");
+            $(".fixed-msg").css({
+                marginLeft: -$(".fixed-msg").width()/2,
+                marginTop: -$(".fixed-msg").height()/2
+            })
+            setTimeout(function(){
+                $(".fixed-msg").animate({
+                    opacity: 0
+                },1000,function(){
+                    $(".fixed-msg").remove();
+                    oStop = true;
+                })
+            },1000)
+        }
+      }
+
+  })
+  </script>
+</head>
+<body>
+
+    <div class="max-box">
+        <div class="max-box-loading">
+            <img src="images/images/loading.gif" alt="" />
+        </div>
+        <div class="max-box-one">
+            <div class="logo-box">
+                <div class="logo clear">
+                    <a href="javascript:;" class="back-home"> <b>返回首页</b>
+                        <span>返回首页</span>
+                    </a>
+                    <div class="clear">
+                        <div class="logo-left">
+                            <a href="">
+                                <img src="images/images/logo.png" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="logo-tip">hi~欢迎来到录趣网！</div>
+                    <ul class="tab-list clear">
+                        <li>
+                            <a href="javascript:;" class="active">学生注册</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">校方注册</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="register-max-box">
+
+                <form action="duizhenpeng.php" method="get">
+                    <div class="register-box">
+                        <div class="register clear">
+                            <div class="reg-left">
+                                <ul class="reg clear reg-one">
+                                    <li class="input-text input-num input-phone">
+                                        <p>手&nbsp;&nbsp;&nbsp;机&nbsp;&nbsp;&nbsp;&nbsp;号：</p>
+                                        <div class="input-box">
+                                            <input type="text" placeholder="请输入手机号" />
+                                            <div class="input-tip">
+                                                <div class="input-tip-min"> <b></b>
+                                                    <span>请输入手机号</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="input-text input-num input-veri">
+                                        <p>手机验证码：</p>
+                                        <div class="input-box">
+                                            <input type="text" placeholder="请输入验证码" />
+                                            <div class="input-tip">
+                                                <div class="input-tip-min">
+                                                    <b></b>
+                                                    <span>请输入验证码</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="input-text input-num email">
+                                        <p>
+                                            邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：
+                                        </p>
+                                        <div class="input-box">
+                                            <input type="text" placeholder="请输入邮箱" />
+                                            <div class="input-tip">
+                                                <div class="input-tip-min">
+                                                    <b></b>
+                                                    <span>请输入邮箱</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="input-text input-num pass-one">
+                                        <p>设&nbsp;置&nbsp;密&nbsp;码：</p>
+                                        <div class="input-box">
+                                            <input type="password" placeholder="请输入验证码" />
+                                            <div class="input-tip">
+                                                <div class="input-tip-min">
+                                                    <b></b>
+                                                    <span>请输入密码</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="input-text input-num pass-two">
+                                        <p>确&nbsp;认&nbsp;密&nbsp;码：</p>
+                                        <div class="input-box">
+                                            <input type="password" placeholder="请再次输入密码" />
+                                            <div class="input-tip">
+                                                <div class="input-tip-min">
+                                                    <b></b>
+                                                    <span>请再次输入密码</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>验&nbsp;&nbsp;&nbsp;证&nbsp;&nbsp;&nbsp;码：</p>
+                                        <input type="text">
+                                        <img src="images/images/yanzhengma.png" class="img-verify" alt="">
+                                        <a href="" class="renewal">看不清，换一个</a>
+                                    </li>
+                                    <li class="input-sub-box">
+                                        <p></p>
+                                        <input type="checkbox" placeholder="请填写登陆密码"  class="reg-checkbox" />
+                                        <label>
+                                            我已阅读并接受
+                                            <a href="">版权声明</a>
+                                            和
+                                            <a href="">隐私保护</a>
+                                            条款
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <p></p>
+                                        <a href="javascript:;" class="sub">注册</a>
+                                        <a href="" class="forget">忘记密码？</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="reg-right"></div>
+                        </div>
+                    </div>
+                </form>
+
+                <form action="duizhenpeng.php" method="get">
+                    <div class="register-box">
+                        <div class="register clear">
+                            <div class="reg-left">
+                                <ul class="reg clear reg-two ">
+                                    <li class="input-text input-num input-name">
+                                        <p>院&nbsp;校&nbsp;名&nbsp;称：</p>
+                                        <div class="input-box">
+                                            <input type="text" placeholder="请输入账号" />
+                                            <div class="input-tip">
+                                                <div class="input-tip-min">
+                                                    <b></b>
+                                                    <span>请输入账号</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="input-text input-num email">
+                                        <p>
+                                            邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：
+                                        </p>
+                                        <div class="input-box">
+                                            <input type="text" placeholder="请输入账号" />
+                                            <div class="input-tip">
+                                                <div class="input-tip-min">
+                                                    <b></b>
+                                                    <span>请输入邮箱</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="input-text input-num pass-one">
+                                        <p>设&nbsp;置&nbsp;密&nbsp;码：</p>
+                                        <div class="input-box">
+                                            <input type="password" placeholder="请输入账号" />
+                                            <div class="input-tip">
+                                                <div class="input-tip-min">
+                                                    <b></b>
+                                                    <span>请输密码</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="input-text input-num pass-two">
+                                        <p>确&nbsp;认&nbsp;密&nbsp;码：</p>
+                                        <div class="input-box">
+                                            <input type="password" placeholder="请输入账号" />
+                                            <div class="input-tip">
+                                                <div class="input-tip-min">
+                                                    <b></b>
+                                                    <span>请重复输入密码</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li >
+                                        <p>验&nbsp;&nbsp;&nbsp;证&nbsp;&nbsp;&nbsp;码：</p>
+                                        <input type="text">
+                                        <img src="images/images/yanzhengma.png" class="img-verify" alt="">
+                                        <a href="" class="renewal">看不清，换一个</a>
+                                    </li>
+                                    <li class="input-sub-box">
+                                        <p></p>
+                                        <input type="checkbox" placeholder="请填写登陆密码" class="reg-checkbox" />
+                                        <label >
+                                            我已阅读并接受
+                                            <a href="">版权声明</a>
+                                            和
+                                            <a href="">隐私保护</a>
+                                            条款
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <p></p>
+                                        <a href="javascript:;" class="sub">注册</a>
+                                        <a href="" class="forget">忘记密码？</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="reg-school"></div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="footer-box">
+                <div class="footer">Copyright 2005-2014 offervisa.com 版权所有 豫ICP备10202274-1号</div>
+            </div>
+        </div>
+        <iframe  frameborder="0" id="home"></iframe>
+    </div>
+</body>
+</html>
