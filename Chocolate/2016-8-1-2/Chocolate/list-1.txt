@@ -1,0 +1,27 @@
+<a href="javascript:;" class="cot-exit"><b></b></a>
+<div class="cot-list-m cot-bg-1">
+          <div class="cot-min  ">
+            <div class="cot-tit">40 лет назад</div>
+            <div class="cot-border"></div>
+            <div class="cot-m">
+             <div class="cot">
+              <div class="cot-center">DIMENSÕES DA CAVIDADE (MM) COMP. X LARG.:  <span>50 X 37</span><br>
+    TAMANHO DA FORMA: <span>410 X 320MM </span><br>
+    Nº DE CAVIDADES: <span>24</span><br>
+    PESO APROX. POR CAVIDADE P/ DOSAGEM EM
+    CHOCOLATE AO LEITE: <span>20G</span><br> </div>
+              <div class="share">
+                <a href="javascript:;" class="share-21"></a>
+                <a href="javascript:;" class="facebook"></a>
+                <a href="javascript:;" class="twitter"></a>
+                <a href="javascript:;" class="weibo"></a>
+              </div>
+               <div class="cot-center">DIMENSÕES DA :</div>
+               <div class="cot-img">
+                 <img src="images/cot-1.jpg" alt="">
+               </div>
+               <a href="javascript:;" class="cot-link"><img src="images/link.png" alt="">http://www.iconfont.cn/</a>
+               </div>
+             </div>
+          </div>
+        </div>

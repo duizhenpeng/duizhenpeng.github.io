@@ -1,0 +1,24 @@
+<a href="javascript:;" class="cot-exit"><b></b></a>
+        <div class="cot-list-m">
+          <div class="cot-min">
+            <div class="cot-tit">обработка</div>
+            <div class="cot-border"></div>
+            <div class="cot-m">
+            <div class="cot">
+              <div class="cot-2-img">
+                <img src="images/list-2-1.png" alt="">
+              </div>
+              <div class="cot-center">своевременное выявление угрожающего развития военно-политической обстановки или подготовки вооруженного нападения на Российскую Федерацию и (или) ее союзников;</div>
+               <div class="cot-2-img">
+                <img src="images/list-2-2.png" alt="">
+              </div>
+              <div class="cot-center">поддержание состояния боевой и мобилизационной готовности страны, стратегических ядерных сил, сил и средств, обеспечивающих их функционирование и применение, а также систем управления для того, чтобы при необходимости нанести агрессору заданный ущерб;</div>
+               <div class="cot-2-img">
+                <img src="images/list-2-3.png" alt="">
+              </div>
+              <div class="cot-center">
+  оддержание боевого потенциала и мобилизационной готовности группировок войск (сил) общего назначения на уровне, обеспечивающем отражение агрессии </div>
+              </div>
+            </div>
+          </div>
+        </div>
