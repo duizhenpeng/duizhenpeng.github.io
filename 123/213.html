@@ -29,14 +29,13 @@
 <body>
 <div id="box">
   <a href="orpheus://song/28465302" class="ios"><img src="images/ios.jpg" alt="" /></a>
-  <a href="orpheus://song/28465302" class="android"><img src="images/android.jpg" alt="" /></a>
+  <a href="m://my.com/" class="android"><img src="images/android.jpg" alt="" /></a>
 </div>
 <script >
  if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
   var loadDateTime = new Date();
-  window.location = "fdsa://song/28465302";
+  window.location = "dyzlapp://";
   window.setTimeout(function() {
-
    var timeOutDateTime = new Date();
    if (timeOutDateTime - loadDateTime < 5000) {
     console.log(1)
@@ -49,6 +48,7 @@
 
  } else if (navigator.userAgent.match(/android/i)) {
   var state = null;
+   window.location = "m://my.com/";
   try {
    state = window.open("apps custom url schemes ", '_blank');
   } catch(e) {}
