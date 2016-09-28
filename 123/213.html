@@ -4,20 +4,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>下载页</title>
 <style type="text/css">
-	#box a {
-		text-align: center;
-		font-size: 50px;
+ * {
+    padding: 0;
+    margin: 0;
+ }
+	a.ios img {
+		  display: block;
+      width: 100%;
+      max-width: 186px;
+      margin: 40px auto;
 	}
 </style>
 </head>
 
 <body>
-<div id="box"></div>
+<div id="box"><a href="orpheus://song/28465302" class="ios"><img src="images/ios.jpg" alt="" /></a></div>
 <script >
 var Box = document.getElementById("box");
 
  if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
- 	Box.innerHTML = "<a href='orpheus://song/28465302'>苹果点击打开</a>";
+ 	Box.innerHTML = '<a href="orpheus://song/28465302" class="ios"><img src="images/ios.jpg" alt="" /></a>';
   var loadDateTime = new Date();
   window.setTimeout(function() {
    var timeOutDateTime = new Date();
