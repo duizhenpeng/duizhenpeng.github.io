@@ -8,11 +8,35 @@
     //     var s=Math.floor(Math.random()*4+0);
     //     document.write(s);
     // }
-    window.location = "dyzlapp://";
+      if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+      	alert(1)
+    var loadDateTime = new Date();
+    window.setTimeout(function() {
+      var timeOutDateTime = new Date();
+      if (timeOutDateTime - loadDateTime < 5000) {
+        window.location = "要跳转的页面URL";
+      } else {
+        window.close();
+      }
+    },
+    25);
+    window.location = " apps custom url schemes ";
+  } else if (navigator.userAgent.match(/android/i)) {
+  	alert(1)
+    var state = null;
+    try {
+      state = window.open("apps custom url schemes ", '_blank');
+    } catch(e) {}
+    if (state) {
+      window.close();
+    } else {
+      window.location = "要跳转的页面URL";
+    }
+  }
 </script>
 </head>
 
 <body>
-<a href="dyzlapp://">点击下载</a>
+<a href="dyzlapp://" >点击下载</a>
 </body>
 </html>
