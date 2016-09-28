@@ -4,34 +4,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>下载页</title>
 <script type="text/javascript">
-window.location = "http://dyzlapp://";
+// window.location = "http://dyzlapp://";
     // window.onload=function(){
     //     var s=Math.floor(Math.random()*4+0);
     //     document.write(s);
     // }
-  //     if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
-  //   var loadDateTime = new Date();
-  //   window.setTimeout(function() {
-  //     var timeOutDateTime = new Date();
-  //     if (timeOutDateTime - loadDateTime < 5000) {
-  //        var box = document.getElementById("box");
-  //        box.innerHTML = "<a href='dyzlapp://' >点击下载</a>"
-  //     } else {
-  //       window.close();
-  //     }
-  //   },
-  //   25);
-  // } else if (navigator.userAgent.match(/android/i)) {
-  //   var state = null;
-  //   try {
-  //     state = window.open("apps custom url schemes ", '_blank');
-  //   } catch(e) {}
-  //   if (state) {
-  //     window.close();
-  //   } else {
-  //     window.location = "要跳转的页面URL";
-  //   }
-  // }
+   if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+    var loadDateTime = new Date();
+    window.setTimeout(function() {
+      var timeOutDateTime = new Date();
+      if (timeOutDateTime - loadDateTime < 5000) {
+        window.location = "http://dyzlapp://";
+      } else {
+        window.close();
+      }
+    },
+    25);
+    window.location = "itmss://itunes.apple.com/app/id590338362";
+  } else if (navigator.userAgent.match(/android/i)) {
+    var state = null;
+    try {
+      state = window.open("安卓下载 ", '_blank');
+    } catch(e) {}
+    if (state) {
+      window.close();
+    } else {
+      window.location = "要跳转的页面URL";
+    }
+  }
 </script>
 </head>
 
