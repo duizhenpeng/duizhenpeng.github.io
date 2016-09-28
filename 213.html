@@ -8,35 +8,35 @@
     //     var s=Math.floor(Math.random()*4+0);
     //     document.write(s);
     // }
-      if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
-    var loadDateTime = new Date();
-    window.setTimeout(function() {
-      var timeOutDateTime = new Date();
-      if (timeOutDateTime - loadDateTime < 5000) {
-         var box = document.getElementById("box");
-         box.innerHTML = "<a href='dyzlapp://' >点击下载</a>"
-      } else {
-        window.close();
-      }
-    },
-    25);
-  } else if (navigator.userAgent.match(/android/i)) {
-    var state = null;
-    try {
-      state = window.open("apps custom url schemes ", '_blank');
-    } catch(e) {}
-    if (state) {
-      window.close();
-    } else {
-      window.location = "要跳转的页面URL";
-    }
-  }
+  //     if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+  //   var loadDateTime = new Date();
+  //   window.setTimeout(function() {
+  //     var timeOutDateTime = new Date();
+  //     if (timeOutDateTime - loadDateTime < 5000) {
+  //        var box = document.getElementById("box");
+  //        box.innerHTML = "<a href='dyzlapp://' >点击下载</a>"
+  //     } else {
+  //       window.close();
+  //     }
+  //   },
+  //   25);
+  // } else if (navigator.userAgent.match(/android/i)) {
+  //   var state = null;
+  //   try {
+  //     state = window.open("apps custom url schemes ", '_blank');
+  //   } catch(e) {}
+  //   if (state) {
+  //     window.close();
+  //   } else {
+  //     window.location = "要跳转的页面URL";
+  //   }
+  // }
 </script>
 </head>
 
 <body>
 	<div id="box"></div>
-<a href='dyzlapp://' style="display:none;">点击下载</a>
+<a href='dyzlapp://' s>点击下载</a>
 
 </body>
 </html>
