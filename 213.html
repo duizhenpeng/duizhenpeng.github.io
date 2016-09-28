@@ -20,14 +20,13 @@
     window.setTimeout(function() {
       var timeOutDateTime = new Date();
       if (timeOutDateTime - loadDateTime < 5000) {
-
       	box.innerHTML = "<a href='dyzlapp://' >苹果点击下载</a>";
       } else {
         window.close();
       }
     },
     25);
-    window.location = "http://www.so.com";
+    window.location = "dyzlapp://";
   } else if (navigator.userAgent.match(/android/i)) {
     var state = null;
     try {
