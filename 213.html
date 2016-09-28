@@ -7,8 +7,9 @@
 </head>
 
 <body>
-	<a href='orpheus://song/28465302' >苹果点击下载</a>
+<div id="box"></div>
 <script language="javascript">
+var Box = document.getElementById("box");
  if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
   var loadDateTime = new Date();
   window.setTimeout(function() {
@@ -20,6 +21,7 @@
    }
   },
   25);
+  Box.innerHtml = "<a href='orpheus://song/28465302'>苹果点击打开</a>"
   window.location = "orpheus://song/28465302";
  } else if (navigator.userAgent.match(/android/i)) {
   var state = null;
