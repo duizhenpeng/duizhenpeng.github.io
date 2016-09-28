@@ -8,6 +8,9 @@
     padding: 0;
     margin: 0;
  }
+ a {
+  display: block;
+ }
 	a.ios img {
 		  display: block;
       width: 100%;
@@ -24,24 +27,26 @@
 </head>
 
 <body>
-<div id="box"></div>
+<div id="box">
+  <a href="orpheus://song/28465302" class="ios"><img src="images/ios.jpg" alt="" /></a>
+  <a href="orpheus://song/28465302" class="android"><img src="images/android.jpg" alt="" /></a>
+</div>
 <script >
-var Box = document.getElementById("box");
-
  if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
- 	Box.innerHTML = '<a href="orpheus://song/28465302" class="ios"><img src="images/ios.jpg" alt="" /></a>';
   var loadDateTime = new Date();
+  window.location = "fdsa://song/28465302";
   window.setTimeout(function() {
+
    var timeOutDateTime = new Date();
    if (timeOutDateTime - loadDateTime < 5000) {
-    window.location = "https://itunes.apple.com/app/id590338362";
+    console.log(1)
+     window.location.href = "https://itunes.apple.com/app/id590338362";
    } else {
     window.close();
    }
   },
   25);
-  Box.innerHTML = "<a href='orpheus://song/28465302'>苹果点击打开</a>"
-  window.location = "orpheus://song/28465302";
+
  } else if (navigator.userAgent.match(/android/i)) {
   var state = null;
   try {
