@@ -8,9 +8,11 @@
 
 <body>
 <div id="box"></div>
-<script language="javascript">
+<script >
 var Box = document.getElementById("box");
+
  if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+ 	Box.innerHTML = "<a href='orpheus://song/28465302'>苹果点击打开</a>";
   var loadDateTime = new Date();
   window.setTimeout(function() {
    var timeOutDateTime = new Date();
