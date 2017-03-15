@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+li{ list-style:none;}
+#div1{ width:800px; height:600px; overflow:hidden; background:black; margin:20px auto; position:relative;}
+#gameBtn{ color:white; font-size:20px; cursor:pointer; border:1px #FFFFFF solid; width:100px; height:30px; line-height:30px; text-align:center; position:absolute; top:285px; left:350px;}
+
+#score{ color:#FFFFFF; font-size:20px;position: absolute;top: 10px;left: 10px;}
+#level { position: absolute; top: 10px; left: 10px; right: 0; text-align: center; line-height: 20px; font-size: 20px; color: #fff;}
+#bee{ position:relative;}
+#hitRate { position: absolute; top: 10px;  right: 10px;  line-height: 20px; font-size: 20px; color: #fff; }
+.enemy1{ width:40px; height:28px; background:url(images/mf1.png) no-repeat; float:left;}
+.enemy2{ width:40px; height:28px; background:url(images/mf2.png) no-repeat; float:left;}
+.enemy3{ width:40px; height:28px; background:url(images/mf3.png) no-repeat; float:left;}
+
+.air1{ width:46px; height:60px; background:url(images/fj.png) no-repeat; position:absolute;}
+.bullet{ width:1px; overflow:hidden; height:10px; background:white; position:absolute;}
+</style>
+<script>
+	window.onload = function(){
+		var GameBtn = document.getElementById("gameBtn");
+		window.onkeydown = function(ev){
+			var ev = ev || window.event;
+			if( ev.keyCode == 13 &&  GameBtn.style.display == ""){//按下回车开始
+				GameBtn.style.display = "none";
+				Game.init("div1");
+			}
+		}
+		GameBtn.onclick = function(){//点击开始
+			this.style.display = "none";
+			Game.init("div1");
+		}
+		GameBtn.style.display = "none";
+		Game.init("div1");
+	}
+		var Game = {
+			oEnemy : {
+				e1 : {style:"enemy1",bullet:"1",speed:"5",fraction:"1"},
+				e2 : {style:"enemy2",bullet:"2",speed:"10",fraction:"2"},
+				e3 : {style:"enemy3",bullet:"3",speed:"15",fraction:"3"}
+			},
+			gk : [
+					{
+						eMap : [
+							'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
+							'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
+							'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
+							'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+							'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+							'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+						],
+						colNum : 10,
+						iSpeedX : 10,
+						iSpeedY : 10,
+						times : 2000,
+						level : "当前第一关"
+					},
+					{
+						eMap : [
+							'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
+							'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
+							'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
+							'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+							'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+							'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+						],
+						colNum : 10,
+						iSpeedX : 10,
+						iSpeedY : 10,
+						times : 2000,
+						level : "当前第二关"
+					}
+			],
+			init : function(id){
+				this.oParent = document.getElementById(id);
+				this.createScore();//积分创建
+				this.createEnemy(0);//关卡创建0第一关1第二关
+				this.createAir();//飞机创建
+			},
+			createScore : function(){//积分创建
+				var oS = document.createElement("div");
+				oS.id = "score";
+				this.Score = 0;
+				oS.innerHTML = "当前积分：" + this.Score;
+				this.oS = oS;
+				this.oParent.appendChild(oS);
+			},
+			createEnemy : function(iNow){//创造敌人
+				var oLv = document.createElement("div");//创建第一关提示
+				oLv.id = "level";
+				oLv.innerHTML =  this.gk[iNow].level;
+				this.oLv = oLv;
+				this.oParent.appendChild(oLv);
+				var oUl = document.createElement("ul");//关卡创建
+				oUl.id = "bee";
+				this.oParent.appendChild(oUl);
+				var gk = this.gk[iNow];
+				oUl.style.width = gk.colNum * 40 + "px";
+				oUl.style.left = (this.oParent.offsetWidth - oUl.offsetWidth)/2 + "px";
+				oUl.style.top = '40px';
+				this.oUl = oUl;
+				for( i in this.gk[iNow].eMap ) {
+					var oLi = document.createElement("li");
+					oLi.speed = this.oEnemy[gk.eMap[i]].speed;
+					oLi.bullet = this.oEnemy[gk.eMap[i]].bullet;
+					oLi.className = this.oEnemy[gk.eMap[i]].style;
+					oUl.appendChild(oLi);
+				}
+				this.aLi = document.getElementsByTagName("li");
+				var arr = [];
+				for( var i=0;i<this.aLi.length;i++ ){
+					arr.push({
+						iTop : this.aLi[i].offsetTop,
+						iLeft : this.aLi[i].offsetLeft
+					});
+				}
+				for(var i=0;i<this.aLi.length;i++){
+					this.aLi[i].style.position = "absolute";
+					this.aLi[i].style.top = arr[i].iTop + "px";
+					this.aLi[i].style.left = arr[i].iLeft + "px";
+				}
+				this.runEnemy(gk);
+			},
+			runEnemy : function(gk){//移动的敌人
+				var This = this;
+				This.aLi = document.getElementsByTagName("li");
+				setInterval(function(){
+					This.oneMove();
+				},gk.times)
+			},
+			oneMove : function(){//单兵作战
+				var nowLi = this.aLi[Math.floor(Math.random()*this.aLi.length)];
+				var This = this;
+				nowLi.timer = setInterval(function(){
+					var a = (This.air.offsetLeft + This.air.offsetWidth / 2) - ( nowLi.offsetLeft + nowLi.parentNode.offsetLeft + This.air.offsetWidth/2 );
+					var b = (This.air.offsetTop + This.air.offsetHeight / 2) - ( nowLi.offsetTop + nowLi.parentNode.offsetTop + This.air.offsetHeight/2 );
+					var c = Math.sqrt( a*a + b*b );
+					var iSX = nowLi.speed * a / c;
+					var iSY = nowLi.speed * b / c;
+					nowLi.style.top = nowLi.offsetTop + iSY + "px";
+					nowLi.style.left = nowLi.offsetLeft + iSX + "px";
+					if( This.pz(This.air,nowLi) ){
+						clearInterval(nowLi.timer);
+						This.oUl.removeChild(nowLi);
+						This.aLi = document.getElementsByTagName("li");
+						console.log("游戏结束!");
+					}
+				},30)
+			},
+			pz : function(obj1,obj2){
+				var L1 = obj1.offsetLeft;
+				var R1 = obj1.offsetLeft + obj1.offsetWidth;
+				var T1 = obj1.offsetTop;
+				var B1 = obj1.offsetTop + obj1.offsetHeight;
+				var L2 = obj2.offsetLeft + obj2.parentNode.offsetLeft;
+				var R2 = obj2.offsetLeft + obj2.offsetWidth + obj2.parentNode.offsetLeft;
+				var T2 = obj2.offsetTop + obj2.parentNode.offsetTop;
+				var B2 = obj2.offsetTop + obj2.offsetHeight + obj2.parentNode.offsetTop;
+
+				if( R1<L2 || L1>R2 || B1<T2 || T1>B2 ){
+					return false;
+				}
+				else{
+					return true;
+				}
+			},
+			createAir : function(){//创造飞机
+				var air = document.createElement("div");
+				air.className = "air1";
+				this.oParent.appendChild(air);
+				this.air = air;
+				air.style.top = this.oParent.offsetHeight - 60 +"px";
+				air.style.left = (this.oParent.offsetWidth - 46) / 2 +"px";
+				this.airMove();
+			},
+			airMove : function(){//飞机移动
+				var This = this;
+				var timer = null;
+				var iNow = 0;
+				var iBullte = true;
+				window.onkeydown = function(ev){
+					var ev = ev || window.event;
+					if( !timer ){
+						timer = setInterval(show,30);
+					}
+					if( ev.keyCode == 65 || ev.keyCode == 37 ){
+						iNow = 1;
+					}
+					if( ev.keyCode == 68 || ev.keyCode == 39 ){
+						iNow = 2;
+					}
+					if( ev.keyCode == 32 ){//空格开枪
+						if( iBullte ){
+							iBullte = false;
+							This.createBullet();
+							setTimeout(function(){
+								iBullte = true;
+							},50)
+						}
+					}
+					ev.preventDefault();//不阻止冒泡无法按下多组合键
+				}
+				window.onkeyup = function(){
+					var ev = ev || window.event;
+					clearInterval(timer);
+					timer = null;
+					iNow = 0;
+					ev.preventDefault()
+				}
+				function show(){
+					if( iNow == 1){
+						This.air.style.left = This.air.offsetLeft-10 + "px";
+					}
+					if( iNow == 2){
+						This.air.style.left = This.air.offsetLeft+10 + "px";
+					}
+				}
+			},
+			createBullet : function(){//创建子弹
+				var oB = document.createElement("div");
+				oB.className = "bullet";
+				oB.style.left = this.air.offsetLeft + this.air.offsetWidth /2 + "px";
+				oB.style.top = this.air.offsetTop - 10 + "px";
+				this.oParent.appendChild(oB);
+				this.runBullet(oB);
+			},
+			runBullet : function(oB){//子弹的运动
+				var This = this;
+				oB.timer = setInterval(function(){
+					if( oB.offsetTop < -10 ){//未命中超过画面
+						clearInterval(oB.timer);
+						This.oParent.removeChild(oB);
+					}else{
+						oB.style.top = oB.offsetTop - 10 + "px";
+					}
+					for( var i=0;i<This.aLi.length;i++ ){//命中
+						if( This.pz(oB,This.aLi[i])){
+							clearInterval(oB.timer);
+							This.oParent.removeChild(oB);
+							if( This.aLi[i].bullet == 1 ){//血量为0
+								This.Score++;
+								This.oS.innerHTML = "当前积分：" + This.Score;
+								clearInterval(This.aLi[i].timer)
+								This.oUl.removeChild(This.aLi[i]);
+								if( This.aLi.length <= 0 ){//进入第二关
+									createEnemy(1);
+									This.oLv.innerHTML =  this.gk[1].level;
+								}
+							}else{//减少血量
+								This.aLi[i].bullet--;
+							}
+						}
+					}
+				},30)
+			}
+		}
+
+</script>
+</head>
+<body>
+<div id="div1">
+	<div id="gameBtn">开始游戏</div>
+</div>
+</body>
+</html>
