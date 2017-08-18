@@ -1,1 +1,5 @@
-当前数据
+{
+    id:"100",
+    role:"63",
+    token: "tokenVal"
+}
